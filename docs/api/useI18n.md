@@ -4,8 +4,8 @@ nav:
   title: API
   order: -1
 group:
-  title: Utils
-  order: 3
+  title: Hooks
+  order: 2
 ---
 
 # useI18n

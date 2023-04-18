@@ -38,7 +38,7 @@ export default () => {
 
 | Nom | Type | Description |
 | --- | --- | --- |
-| className | string | Une classe CSS optionnelle à appliquer au composant. |
-| size | 'small' &#124; 'default' &#124; number | La taille du bouton de menu contextuel. |
-| menu | [MenuProps](https://4x.ant.design/components/menu/#API) | ```required```
-| ... | [DropdownProps](https://4x.ant.design/components/dropdown/#API) | Autres props du dropdown |
+| **className** | string | Une classe CSS optionnelle à appliquer au composant. |
+| **size** | 'small' &#124; 'default' &#124; number | La taille du bouton de menu contextuel. |
+| **menu** | [MenuProps](https://4x.ant.design/components/menu/#API) | ```required```
+| **...** | [DropdownProps](https://4x.ant.design/components/dropdown/#API) | Autres props du dropdown |

@@ -59,20 +59,20 @@ export default () => {
 
 | Nom | description | Type | Default |
 |---|---|---|---|
-| schema |   | Array<[CSVNoticeItem](/api/csv#csvnoticeitem)> | ```required``` |
+| **schema** |   | Array<[CSVNoticeItem](/api/csv#csvnoticeitem)> | ```required``` |
 
 
 ### CSVNoticeItem
 
 | Nom | description | Type | Default |
 |---|---|---|---|
-| header | Nom du header | string | ```required``` |
-| description  | Description de la colonne | string | ```required``` |
-| values  | Liste des valeurs possibles | Array<[CSVNoticeItemValue](/api/csv#csvnoticeitemvalue)> |  |
+| **header** | Nom du header | string | ```required``` |
+| **description**  | Description de la colonne | string | ```required``` |
+| **values**  | Liste des valeurs possibles | Array<[CSVNoticeItemValue](/api/csv#csvnoticeitemvalue)> |  |
 
 ### CSVNoticeItemValue
 | Nom | description | Type | Default |
 |---|---|---|---|
-| value |  | string | ```required``` |
-| description |  | string |  |
+| **value** |  | string | ```required``` |
+| **description** |  | string |  |
 
