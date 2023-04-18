@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "@9troisquarts/wand",
-  "version": "1.10.4",
+  "version": "1.10.5",
   "description": "A react library developed with dumi",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -58,6 +58,7 @@
     }
   },
   "dependencies": {
+    "@ant-design/icons": "<5",
     "@emotion/css": "^11.10.5",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
