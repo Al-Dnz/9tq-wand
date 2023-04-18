@@ -1,0 +1,32 @@
+.descriptions .label {
+  font-weight: 600;
+}
+
+.descriptions .required {
+  font-size: 12px;
+  color: #c31919;
+}
+
+.descriptions :global .ant-descriptions-item {
+  padding-bottom: 0;
+}
+
+.descriptions :global .ant-descriptions-header {
+  margin-bottom: 10px;
+}
+
+.checkDescriptions :global .ant-descriptions-item-label {
+  font-weight: 600;
+}
+
+.actions {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.sampleFileLink {
+  font-size: 12px;
+  font-weight: 500;
+}

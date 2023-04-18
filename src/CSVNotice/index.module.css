@@ -1,0 +1,32 @@
+.container {
+  border-radius: 5px;
+  background-color: lighten(#cccccc, 15%);
+  padding: 10px 15px;
+}
+
+.item {
+  display: inline-flex;
+}
+
+.item code {
+  flex: 0 0 auto;
+  color: #8b0000;
+  background-color: #ebebeb;
+  border-radius: 5px;
+  padding: 3px 5px;
+}
+
+.item ul {
+  padding-left: 0px;
+  list-style: none;
+}
+.item ul > li {
+  margin-top: 5px;
+}
+
+.item ul > li strong {
+  border-radius: 3px;
+  padding: 0 3px;
+  background-color: #FFF;
+  display: inline-block;
+}

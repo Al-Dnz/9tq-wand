@@ -1,0 +1,86 @@
+.switch {
+  background-color: #efefef;
+}
+
+.ant-switch-checked {
+  background-color: orange;
+}
+
+.tag {
+  border-radius: 3px;
+  background-color: hsl(0deg 0% 100% / 26%);
+  padding: 4px 10px;
+  display: flex;
+  align-items: center;
+  transition: all linear .2s;
+  cursor: pointer;
+}
+
+.tag:hover {
+  background-color: hsl(0deg 0% 85% / 26%);
+}
+
+
+.pill {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  border-radius: 10px;
+  margin-right: 10px;
+  background-color: #efefef;
+}
+
+.enabled {
+  background-color: hsla(114, 93%, 43%, 0.81);
+}
+
+.disabled {
+  background-color: hsl(0deg 100% 50% / 81%);
+}
+
+.impersonationPopover :global .ant-popover-inner {
+  padding: 0;
+  min-width: 200px;
+}
+
+.popoverContent {
+  margin-right: -16px;
+  margin-left: -16px;
+  width: 300px;
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+.popoverLoading {
+  height: 30px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.impersonationModelName {
+  padding: 0 16px;
+  text-transform: uppercase;
+  color: #c8c8c8;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.user {
+  padding: 3px 16px;
+  transition: background-color linear .1s;
+}
+
+.user:hover {
+  cursor: pointer;
+  background-color: #f5f5f5;
+}
+
+.user.padded {
+  padding: 3px 32px;
+}
+
+.userGroup {
+  margin-bottom: 4px;
+}
