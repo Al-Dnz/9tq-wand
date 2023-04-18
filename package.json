@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "@9troisquarts/wand",
-  "version": "1.10.3",
+  "version": "1.10.4",
   "description": "A react library developed with dumi",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -67,6 +67,7 @@
     "humps": "^2.0",
     "lodash": "^4.17",
     "luxon": "^2.4.0",
+    "moment": "^2.29.4",
     "qs": "^6.11.0",
     "react-intl": "<6",
     "react-on-rails": "12.3"
