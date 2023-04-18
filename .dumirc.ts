@@ -5,5 +5,7 @@ export default defineConfig({
   themeConfig: {
     name: 'Wand',
   },
-  locales: [{ id: 'en-EN', name: 'English' }]
+  locales: [{ id: 'en-EN', name: 'English' }],
+  base: '/9tq-wand',
+  publicPath: '/9tq-wand/',
 });
