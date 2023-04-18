@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "@9troisquarts/wand",
-  "version": "1.10.2",
+  "version": "1.10.3",
   "description": "A react library developed with dumi",
   "main": "dist/index.js",
   "module": "dist/index.js",
