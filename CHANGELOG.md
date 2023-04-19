@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.1](https://github.com/9troisquarts/9tq-wand/compare/v2.1.0...v2.1.1) (2023-04-19)
+
+### Bug Fixes
+
+- Export hooks ([8e99a41](https://github.com/9troisquarts/9tq-wand/commit/8e99a4184f2397c2602fc04e2fe9c937d4dc5e8c))
+
 ## [2.1.0](https://github.com/9troisquarts/9tq-wand/compare/v2.0.1...v2.1.0) (2023-04-19)
 
 ### Features
