@@ -8,7 +8,6 @@ import {
   Space,
   Spin,
   Steps,
-  Tooltip,
   Typography,
   Upload,
 } from 'antd';

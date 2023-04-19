@@ -4,6 +4,8 @@ export type { ModelDefinitionType } from './ModelDefinition/castAttributesFromDe
 export { default as capitalize } from './utils/capitalize';
 export { default as memoOnlyForKeys } from './utils/memoOnlyForKeys';
 export { default as nl2br } from './utils/nl2br';
+export { default as useTableList } from './utils/useTableList';
+export { default as useSearchFilters } from './utils/useSearchFilters';
 export { default as AutoLink } from './AutoLink';
 export { default as ContextMenu } from './ContextMenu';
 export { default as NtqToolbar } from './NtqToolbar';
