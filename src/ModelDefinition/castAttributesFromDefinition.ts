@@ -6,8 +6,6 @@ import isArray from 'lodash/isArray';
 import isNil from 'lodash/isNil';
 import moment from 'moment';
 
-import { DateTime } from 'luxon';
-
 const toFloat = (v: number) => parseFloat(v.toString().replace(/\,/g, '.'));
 
 const defaultOptions = {
