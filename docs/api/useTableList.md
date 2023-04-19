@@ -43,42 +43,70 @@ Le hook renvoie un objet contenant plusieurs propriétés :
 ## Usage
 
 ```tsx | pure
-import { useSearchFilters } from '@9troisquarts/wand';
+import React from 'react';
+import { Table } from 'antd';
 import { gql } from '@apollo/client';
+import { useTableList } from '@9troisquarts/wand';
 
-const searchDefinition = {
-  search: 'String',
-  startAfter: 'Date'
-};
-
-const GET_RECORDS_LIST = gql`
-  query records($search: SearchRecordsAttributes) {
-    records(search: $search) {
-      records {
-        id
-        name
-        startingOn
-      }
-      pagination {
-        page
-        perPage
-        total
-      }
+// Requête GraphQL pour récupérer les utilisateurs avec pagination
+const GET_USERS = gql`
+  query getUsers($perPage: Int, $page: Int, $search: UserFilter) {
+    users(perPage: $perPage, page: $page, search: $search) {
+      id
+      name
+      email
+    }
+    pagination {
+      page
+      perPage
+      total
     }
   }
 `;
 
-export const () => {
+// Définition du modèle pour la recherche
+const userModelDefinition = {
+  name: { type: 'String' },
+  email: { type: 'String' },
+};
+
+const UserList = () => {
   const {
-    records: clients,
+    records: users,
+    loading,
+    pagination,
+    search,
     onSearchChange,
     onReset,
-    search,
-    refetch,
-  } = useTableList<RecordType>('records', 
-    { query: GET_RECORDS_LIST },
-    { definition: searchDefinition, updateLocation: true }
+  } = useTableList('users', {
+    query: GET_USERS,
+    paginate: true,
+  }, {
+    definition: userModelDefinition,
+    updateLocation: false,
+    key: 'users',
+  });
+
+  const columns = [
+    { title: 'ID', dataIndex: 'id', key: 'id' },
+    { title: 'Name', dataIndex: 'name', key: 'name' },
+    { title: 'Email', dataIndex: 'email', key: 'email' },
+  ];
+
+  return (
+    <div>
+      <SearchBar value={search} onChange={onSearchChange} onReset={onReset} />
+      <Table
+        dataSource={users}
+        columns={columns}
+        loading={loading}
+        pagination={pagination}
+        rowKey="id"
+      />
+    </div>
   );
-}
+};
+
+export default UserList;
 
 ```
