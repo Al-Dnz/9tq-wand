@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0](https://github.com/9troisquarts/9tq-wand/compare/v2.1.1...v2.2.0) (2023-04-20)
+
+### Features
+
+- useGraphModel ([890989e](https://github.com/9troisquarts/9tq-wand/commit/890989ef19a320760d9396d066043fdad3d20084))
+
 ### [2.1.1](https://github.com/9troisquarts/9tq-wand/compare/v2.1.0...v2.1.1) (2023-04-19)
 
 ### Bug Fixes
