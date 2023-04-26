@@ -47,6 +47,7 @@ export type FieldItemType = {
   icon?: any;
   name: string;
   input: InputType;
+  style?: React.CSSProperties;
   className?: string;
   disabled?: boolean;
 }

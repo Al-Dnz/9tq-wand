@@ -1,11 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { FieldSchema, SelectInputProps, StringInputProps } from '../types';
-import SVG from 'react-inlinesvg';
-import { Badge, Checkbox, Input, Popover, Space } from 'antd';
-import { useSelections } from 'ahooks';
-import scopeSvg from '../icons/scope.svg';
+import React, { useEffect, useState } from 'react';
+import { FieldSchema, StringInputProps } from '../types';
+import { Input } from 'antd';
 import '../index.css';
-import { filterOption } from '../_utils';
 
 type FilterProps = {
   field: FieldSchema;
@@ -39,6 +35,7 @@ const StringFilter: React.FC<FilterProps> = props => {
   return (
     <Input
       className={`wand__inline-filter__string-input ${field.className || ''}`}
+      style={field.style || {}}
       value={internalValue}
       onChange={handleChange}
       addonBefore={field.icon}

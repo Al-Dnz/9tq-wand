@@ -86,7 +86,7 @@ const SelectFilter: React.FC<FilterProps> = props => {
       )}
       <div className="wand__inline-filter__options-container">
         {filteredOptions.map(o => (
-          <div className={`wand__inline-filter__option ${internalValue?.includes(o.value) ? 'wand__inline-filter__option--is-selected' : ''}`} onClick={() => onSelect(o.value)}>
+          <div key={o.value} className={`wand__inline-filter__option ${internalValue?.includes(o.value) ? 'wand__inline-filter__option--is-selected' : ''}`} onClick={() => onSelect(o.value)}>
             <Space>
               <Checkbox checked={internalValue?.includes(o.value)} />
               {o.children || o.label}
@@ -109,7 +109,14 @@ const SelectFilter: React.FC<FilterProps> = props => {
     >
       <div className={`wand__inline-filter__filter ${internalValue.length > 0 ? 'wand__inline-filter__filter--filled' : ''} ${internalValue.length > 0 || popoverIsOpen ? 'wand__inline-filter__filter--focused' : ''}`}>
         <Space>
-          {internalValue.length > 0 && !multiple ? options.find(o => o.value === internalValue[0])?.label : field.label}
+          <span>
+            {field.label}
+            {internalValue.length > 0 && !multiple && (
+              <span>
+                &nbsp;:&nbsp;{options.find(o => o.value === internalValue[0])?.label}
+              </span>
+            )}
+          </span>
           {internalValue.length > 0 && multiple ? (
             <Badge className="wand__inline-filter__badge" count={internalValue.length} />
           ) : field.icon

@@ -106,7 +106,7 @@
 }
 
 .wand__inline-filter__popover {
-  padding-top: 3px;
+  padding-top: 3px !important;
 }
 
 .wand__inline-filter__popover .ant-popover-content {

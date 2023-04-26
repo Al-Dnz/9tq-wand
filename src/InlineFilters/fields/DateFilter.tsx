@@ -1,9 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { DateInputProps, FieldSchema, SelectInputProps } from '../types';
 import SVG from 'react-inlinesvg';
-import { Badge, Checkbox, DatePicker, Input, Popover, Space } from 'antd';
-import { useSelections } from 'ahooks';
-import scopeSvg from '../icons/scope.svg';
+import { DatePicker } from 'antd';
 import '../index.css';
 import { filterOption } from '../_utils';
 import moment, { isMoment } from 'moment';

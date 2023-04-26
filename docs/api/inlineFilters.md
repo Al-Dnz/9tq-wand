@@ -31,6 +31,9 @@ export default () => {
           {
             name: 'nameEq',
             icon: <UserOutlined />,
+            style: {
+              width: 300,
+            },
             input: {
               type: 'string',
               placeholder: 'Rechercher par nom...'
@@ -48,7 +51,7 @@ export default () => {
           },
           {
             name: 'users',
-            label: 'Utilisateurs',
+            label: 'Utilisateur',
             icon: <UserOutlined />,
             input: {
               type: 'select',
