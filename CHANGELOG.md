@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.3.0](https://github.com/9troisquarts/9tq-wand/compare/v2.2.0...v2.3.0) (2023-04-26)
+
+### Features
+
+- inline filters ([62afc3f](https://github.com/9troisquarts/9tq-wand/commit/62afc3f976898e8260eaa669c4d98993a992e3f2))
+
 ## [2.2.0](https://github.com/9troisquarts/9tq-wand/compare/v2.1.1...v2.2.0) (2023-04-20)
 
 ### Features

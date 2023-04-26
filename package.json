@@ -1,6 +1,6 @@
 {
   "name": "@9troisquarts/wand",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "private": false,
   "description": "A react library developed with dumi",
   "license": "MIT",
@@ -68,9 +68,9 @@
     "moment": "^2.29.4",
     "qs": "<7",
     "query-string": "<7",
+    "react-inlinesvg": "<4",
     "react-intl": "<6",
     "react-on-rails": "12.3",
-    "react-inlinesvg": "<4",
     "react-router-dom": "<6"
   },
   "devDependencies": {
