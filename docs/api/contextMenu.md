@@ -5,7 +5,7 @@ nav:
   order: -1
 group:
   title: Components
-  order: 2
+  order: 0
 ---
 
 # ContextMenu

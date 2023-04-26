@@ -5,7 +5,7 @@ nav:
   order: -1
 group:
   title: Components
-  order: 3
+  order: 0
 ---
 
 # CSV Notice

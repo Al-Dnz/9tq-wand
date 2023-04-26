@@ -1,0 +1,177 @@
+:root{
+  --wand-filter-color: #00796B;
+  --wand-filter-option-selected-color: rgba(0, 121, 107, 0.1);
+  --wand-popover-radius: 10px;
+  --wand-filter-radius: 4px;
+}
+
+.wand__inline-filter__filter {
+  padding: 5px 8px;
+  border-radius: 4px;
+  background-color: #FFF;
+  border: 1px solid rgba(205, 205, 205, 0.6);
+  transition: all linear .1s;
+  cursor: pointer;
+}
+
+.wand__inline-filter__filter:hover, .wand__inline-filter__filter--focused {
+  border-color: var(--wand-filter-color);
+  color: var(--wand-filter-color);
+}
+
+.wand__inline-filter__search-input {
+  margin-bottom: 10px;
+}
+
+.wand__inline-filter__search-input .ant-input-group-addon {
+  border-top-left-radius: var(--wand-popover-radius);
+  border-bottom-left-radius: var(--wand-popover-radius);
+  padding-right: 5px;
+}
+
+.wand__inline-filter__search-input .ant-input {
+  border-top-right-radius: var(--wand-popover-radius);
+  border-bottom-right-radius: var(--wand-popover-radius);
+  padding-left: 5px;
+}
+
+.wand__inline-filter__search-input__icon-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.wand__inline-filter__search-input .ant-input-group-addon,
+.wand__inline-filter__search-input .ant-input {
+  border: none;
+  background-color: hsla(220, 14%, 96%, 0.6);
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.wand__inline-filter__search-input .ant-input-group-addon svg path {
+  fill: hsla(0, 0%, 80%, 1);
+}
+
+.wand__inline-filter__search-input--is-focused  .ant-input-group-addon svg path, .wand__inline-filter__search-input--is-filled .ant-input-group-addon svg path {
+  fill: #343434;
+}
+
+.wand__inline-filter__search-input .ant-input:focus {
+  box-shadow: none;
+}
+
+.wand__inline-filter__search-input .ant-input::placeholder {
+  color: hsla(0, 0%, 80%, 1);
+}
+
+.wand__inline-filter__option {
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color linear .1s;
+}
+
+.wand__inline-filter__option .ant-checkbox-inner {
+  border-radius: var(--wand-filter-radius);
+  border: 1px solid #CDCDCD;
+}
+
+.wand__inline-filter__option .ant-checkbox:hover .ant-checkbox-inner {
+  border-color: var(--wand-filter-color);
+}
+
+.wand__inline-filter__option .ant-checkbox-checked::after {
+}
+
+.wand__inline-filter__option .ant-checkbox-checked .ant-checkbox-inner {
+  background-color: var(--wand-filter-color);
+  border-color: var(--wand-filter-color);
+  filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.2));
+}
+
+.wand__inline-filter__option .ant-checkbox-checked::after {
+  border-color: var(--wand-filter-color);
+  border-radius: var(--wand-filter-radius);
+}
+
+.wand__inline-filter__option:hover, .wand__inline-filter__option--is-selected {
+  background-color: var(--wand-filter-option-selected-color);
+  color: var(--wand-filter-color)
+}
+
+.wand__inline-filter__options-container {
+  margin-left: -16px;
+  margin-right: -16px;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+.wand__inline-filter__popover {
+  padding-top: 3px;
+}
+
+.wand__inline-filter__popover .ant-popover-content {
+  min-width: 300px;
+};
+
+.wand__inline-filter__badge {}
+
+.wand__inline-filter__badge .ant-badge-count{
+  color: var(--wand-filter-color);
+  background-color: var(--wand-filter-option-selected-color);
+}
+
+.wand__inline-filter__popover .ant-popover-inner {
+  border-radius: var(--wand-popover-radius);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.wand__inline-filter__string-input .ant-input:focus, .wand__inline-filter__string-input .ant-input-focused{
+  outline: none;
+  border-color: rgba(205, 205, 205, 0.6);
+  box-shadow: none;
+}
+
+.wand__inline-filter__string-input {}
+
+.wand__inline-filter__string-input .ant-input-group-addon {
+  background: #FFF;
+  border-top-left-radius: var(--wand-filter-radius);
+  border-bottom-left-radius: var(--wand-filter-radius);
+  padding-right: 0;
+}
+
+.ant-input-group>.ant-input:last-child,
+.ant-input-group-addon:last-child {
+  border-left: 0;
+  border-top-right-radius: var(--wand-filter-radius);
+  border-bottom-right-radius: var(--wand-filter-radius);
+}
+
+.wand__inline-filter__datepicker.ant-picker-focused, .wand__inline-filter__datepicker.ant-picker:hover {
+  border-color: var(--wand-filter-color);
+  box-shadow: none;
+  border-radius: 4px;
+}
+
+.wand__inline-filter__datepicker--filled {
+  border-color: var(--wand-filter-color);
+  border-radius: var(--wand-filter-radius);
+  color: var(--wand-filter-color);
+}
+
+.wand__inline-filter__datepicker.ant-picker-focused input,
+.wand__inline-filter__datepicker.ant-picker:hover input,
+.wand__inline-filter__datepicker.ant-picker-focused input::placeholder,
+.wand__inline-filter__datepicker.ant-picker:hover input::placeholder,
+.wand__inline-filter__datepicker--filled input {
+  color: var(--wand-filter-color);
+}
+
+.wand__inline-filter__datepicker.ant-picker-focused .ant-picker-suffix svg path,
+.wand__inline-filter__datepicker.ant-picker:hover .ant-picker-suffix svg path {
+  fill: var(--wand-filter-color);
+}
+
+.wand__inline-filter__datepicker--filled .ant-picker-suffix svg path {
+  fill: var(--wand-filter-color)
+}

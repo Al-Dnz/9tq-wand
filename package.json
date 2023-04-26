@@ -70,6 +70,7 @@
     "query-string": "<7",
     "react-intl": "<6",
     "react-on-rails": "12.3",
+    "react-inlinesvg": "<4",
     "react-router-dom": "<6"
   },
   "devDependencies": {

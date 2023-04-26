@@ -14,3 +14,7 @@ export { default as useI18n } from './utils/useI18n';
 export { default as CSVNotice } from './CSVNotice';
 export { default as ExcelsiorImportModal } from './ExcelsiorImportModal';
 export { default as useGraphqlModel } from './utils/useGraphqlModel';
+
+// Inline Filters
+export { default as InlineFilters } from './InlineFilters';
+export type { InlineFilterSchema } from './InlineFilters/types';

@@ -5,7 +5,7 @@ nav:
   order: -1
 group:
   title: Components
-  order: 5
+  order: 0
 ---
 
 # NtqToolbar
