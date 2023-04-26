@@ -6,7 +6,7 @@ import { useSelections } from 'ahooks';
 import scopeSvg from '../icons/scope.svg';
 import '../index.css';
 import { filterOption } from '../_utils';
-import moment from 'moment';
+import moment, { isMoment } from 'moment';
 
 type FilterProps = {
   field: FieldSchema;
@@ -25,11 +25,10 @@ const DateFilter: React.FC<FilterProps> = props => {
     inputProps = {}
   } = (field.input || {}) as DateInputProps;
 
-  const [internalValue, setInternalValue] = useState<moment.Moment | undefined>(undefined);
-
+  const [internalValue, setInternalValue] = useState<moment.Moment | undefined>(isMoment(value) ? value : (moment(value).isValid() ? moment(value) : undefined));
 
   useEffect(() => {
-    setInternalValue(value);
+    setInternalValue(isMoment(value) ? value : (moment(value).isValid() ? moment(value) : undefined));
   }, [value]);
 
   const handleChange = (value) => {

@@ -23,7 +23,7 @@ export default () => {
   return (
     <Space direction="vertical">
       <InlineFilters
-        value={{}}
+        value={{ activeOn: '2023-11-12' }}
         onReset={() => console.log("reset")}
         resetText="Réinitialiser les filtres"
         onChange={(object) => console.log(object)}

@@ -43,8 +43,8 @@ export type InputType =
   | StringInputProps;
 
 export type FieldItemType = {
-  label: string;
-  icon: any;
+  label?: string;
+  icon?: any;
   name: string;
   input: InputType;
   className?: string;
