@@ -20,6 +20,7 @@ const StringFilter: React.FC<FilterProps> = props => {
     placeholder,
   } = (field.input || {}) as StringInputProps;
 
+  const [isFocused, setIsFocused] = useState<boolean>(false);
   const [internalValue, setInternalValue] = useState<string | undefined>(undefined);
 
 
@@ -34,7 +35,9 @@ const StringFilter: React.FC<FilterProps> = props => {
 
   return (
     <Input
-      className={`wand__inline-filter__string-input ${field.className || ''}`}
+      className={`wand__inline-filter__string-input ${field.className || ''} ${isFocused || (internalValue && internalValue.length > 0) ? 'wand__inline-filter__string-input--is-focused' : ''}`}
+      onFocus={() => setIsFocused(true)}
+      onBlur={() => setIsFocused(false)}
       style={field.style || {}}
       value={internalValue}
       onChange={handleChange}

@@ -42,7 +42,7 @@ const InlineFilters: React.FC<InlineFiltersProps> = props => {
   }
 
   return (
-    <Space style={{ width: "100%" }}>
+    <Space style={{ width: "100%" }} wrap>
       {schema.map(field => {
         const FilterComponent = filterForType[field.input.type] || SelectFilter;
         return (

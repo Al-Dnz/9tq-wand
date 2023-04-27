@@ -109,7 +109,7 @@ const SelectFilter: React.FC<FilterProps> = props => {
     >
       <div className={`wand__inline-filter__filter ${internalValue.length > 0 ? 'wand__inline-filter__filter--filled' : ''} ${internalValue.length > 0 || popoverIsOpen ? 'wand__inline-filter__filter--focused' : ''}`}>
         <Space>
-          <span>
+          <span className="wand__inline-filter__label">
             {field.label}
             {internalValue.length > 0 && !multiple && (
               <span>

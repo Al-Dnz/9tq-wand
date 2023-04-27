@@ -64,6 +64,10 @@
   color: hsla(0, 0%, 80%, 1);
 }
 
+.wand__inline-filter__label {
+  white-space: nowrap;
+}
+
 .wand__inline-filter__option {
   padding: 8px 16px;
   cursor: pointer;
@@ -125,13 +129,23 @@
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-.wand__inline-filter__string-input .ant-input:focus, .wand__inline-filter__string-input .ant-input-focused{
+.wand__inline-filter__string-input .ant-input:focus,
+.wand__inline-filter__string-input .ant-input-focused,
+.wand__inline-filter__datepicker.ant-picker,
+.wand__inline-filter__string-input .ant-input {
   outline: none;
-  border-color: rgba(205, 205, 205, 0.6);
+  border: 1px solid rgba(205, 205, 205, 0.6);
   box-shadow: none;
 }
 
-.wand__inline-filter__string-input {}
+.wand__inline-filter__string-input .ant-input {
+  background-color: #FFF;
+}
+
+.wand__inline-filter__string-input:hover .ant-input,
+.wand__inline-filter__string-input:hover .ant-input-group-addon {
+  border-color: var(--wand-filter-color);
+}
 
 .wand__inline-filter__string-input .ant-input-group-addon {
   background: #FFF;
@@ -151,6 +165,21 @@
   border-color: var(--wand-filter-color);
   box-shadow: none;
   border-radius: 4px;
+}
+
+.wand__inline-filter__string-input.wand__inline-filter__string-input--is-focused .ant-input,
+.wand__inline-filter__string-input.wand__inline-filter__string-input--is-focused .ant-input-group-addon {
+  border-color: var(--wand-filter-color);
+  color: var(--wand-filter-color);
+}
+
+.wand__inline-filter__string-input--is-focused .ant-input-group-addon fill path {
+  fill: var(--wand-filter-color);
+}
+
+.wand__inline-filter__datepicker.ant-picker {
+  background: #FFF;
+  border-radius: var(--wand-filter-radius);
 }
 
 .wand__inline-filter__datepicker--filled {
