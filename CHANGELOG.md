@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.3.8](https://github.com/9troisquarts/9tq-wand/compare/v2.3.7...v2.3.8) (2023-04-27)
+
+
+### Bug Fixes
+
+* Fix border color ([c6eb6c7](https://github.com/9troisquarts/9tq-wand/commit/c6eb6c77812feb62dbfbc94783c37630afbfde2c))
+
 ### [2.3.7](https://github.com/9troisquarts/9tq-wand/compare/v2.3.6...v2.3.7) (2023-04-27)
 
 ### [2.3.6](https://github.com/9troisquarts/9tq-wand/compare/v2.3.5...v2.3.6) (2023-04-27)
