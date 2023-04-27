@@ -1,9 +1,3 @@
-:root{
-  --wand-filter-color: #00796B;
-  --wand-filter-option-selected-color: rgba(0, 121, 107, 0.1);
-  --wand-popover-radius: 10px;
-  --wand-filter-radius: 4px;
-}
 
 .wand__inline-filter__filter {
   padding: 5px 8px;
@@ -15,7 +9,9 @@
 }
 
 .wand__inline-filter__filter:hover, .wand__inline-filter__filter--focused {
+  border-color: #00796B;
   border-color: var(--wand-filter-color);
+  color: #00796B;
   color: var(--wand-filter-color);
 }
 
@@ -24,13 +20,17 @@
 }
 
 .wand__inline-filter__search-input .ant-input-group-addon {
+  border-top-left-radius: 10px;
   border-top-left-radius: var(--wand-popover-radius);
+  border-bottom-left-radius: 10px;
   border-bottom-left-radius: var(--wand-popover-radius);
   padding-right: 5px;
 }
 
 .wand__inline-filter__search-input .ant-input {
+  border-top-right-radius: 10px;
   border-top-right-radius: var(--wand-popover-radius);
+  border-bottom-right-radius: 10px;
   border-bottom-right-radius: var(--wand-popover-radius);
   padding-left: 5px;
 }
@@ -60,12 +60,16 @@
   box-shadow: none;
 }
 
-.wand__inline-filter__search-input .ant-input::placeholder {
+.wand__inline-filter__search-input .ant-input::-webkit-input-placeholder {
   color: hsla(0, 0%, 80%, 1);
 }
 
-.wand__inline-filter__label {
-  white-space: nowrap;
+.wand__inline-filter__search-input .ant-input::-ms-input-placeholder {
+  color: hsla(0, 0%, 80%, 1);
+}
+
+.wand__inline-filter__search-input .ant-input::placeholder {
+  color: hsla(0, 0%, 80%, 1);
 }
 
 .wand__inline-filter__option {
@@ -75,11 +79,13 @@
 }
 
 .wand__inline-filter__option .ant-checkbox-inner {
+  border-radius: 4px;
   border-radius: var(--wand-filter-radius);
   border: 1px solid #CDCDCD;
 }
 
 .wand__inline-filter__option .ant-checkbox:hover .ant-checkbox-inner {
+  border-color: #00796B;
   border-color: var(--wand-filter-color);
 }
 
@@ -87,18 +93,25 @@
 }
 
 .wand__inline-filter__option .ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #00796B;
   background-color: var(--wand-filter-color);
+  border-color: #00796B;
   border-color: var(--wand-filter-color);
-  filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.2));
+  -webkit-filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.2));
+          filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.2));
 }
 
 .wand__inline-filter__option .ant-checkbox-checked::after {
+  border-color: #00796B;
   border-color: var(--wand-filter-color);
+  border-radius: 4px;
   border-radius: var(--wand-filter-radius);
 }
 
 .wand__inline-filter__option:hover, .wand__inline-filter__option--is-selected {
+  background-color: rgba(0, 121, 107, 0.1);
   background-color: var(--wand-filter-option-selected-color);
+  color: #00796B;
   color: var(--wand-filter-color)
 }
 
@@ -110,7 +123,7 @@
 }
 
 .wand__inline-filter__popover {
-  padding-top: 3px !important;
+  padding-top: 3px;
 }
 
 .wand__inline-filter__popover .ant-popover-content {
@@ -120,36 +133,31 @@
 .wand__inline-filter__badge {}
 
 .wand__inline-filter__badge .ant-badge-count{
+  color: #00796B;
   color: var(--wand-filter-color);
+  background-color: rgba(0, 121, 107, 0.1);
   background-color: var(--wand-filter-option-selected-color);
 }
 
 .wand__inline-filter__popover .ant-popover-inner {
+  border-radius: 10px;
   border-radius: var(--wand-popover-radius);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-.wand__inline-filter__string-input .ant-input:focus,
-.wand__inline-filter__string-input .ant-input-focused,
-.wand__inline-filter__datepicker.ant-picker,
-.wand__inline-filter__string-input .ant-input {
+.wand__inline-filter__string-input .ant-input:focus, .wand__inline-filter__string-input .ant-input-focused{
   outline: none;
-  border: 1px solid rgba(205, 205, 205, 0.6);
+  border-color: rgba(205, 205, 205, 0.6);
   box-shadow: none;
 }
 
-.wand__inline-filter__string-input .ant-input {
-  background-color: #FFF;
-}
-
-.wand__inline-filter__string-input:hover .ant-input,
-.wand__inline-filter__string-input:hover .ant-input-group-addon {
-  border-color: var(--wand-filter-color);
-}
+.wand__inline-filter__string-input {}
 
 .wand__inline-filter__string-input .ant-input-group-addon {
   background: #FFF;
+  border-top-left-radius: 4px;
   border-top-left-radius: var(--wand-filter-radius);
+  border-bottom-left-radius: 4px;
   border-bottom-left-radius: var(--wand-filter-radius);
   padding-right: 0;
 }
@@ -157,34 +165,35 @@
 .ant-input-group>.ant-input:last-child,
 .ant-input-group-addon:last-child {
   border-left: 0;
+  border-top-right-radius: 4px;
   border-top-right-radius: var(--wand-filter-radius);
+  border-bottom-right-radius: 4px;
   border-bottom-right-radius: var(--wand-filter-radius);
 }
 
 .wand__inline-filter__datepicker.ant-picker-focused, .wand__inline-filter__datepicker.ant-picker:hover {
+  border-color: #00796B;
   border-color: var(--wand-filter-color);
   box-shadow: none;
   border-radius: 4px;
 }
 
-.wand__inline-filter__string-input.wand__inline-filter__string-input--is-focused .ant-input,
-.wand__inline-filter__string-input.wand__inline-filter__string-input--is-focused .ant-input-group-addon {
+.wand__inline-filter__datepicker--filled {
+  border-color: #00796B;
   border-color: var(--wand-filter-color);
+  border-radius: 4px;
+  border-radius: var(--wand-filter-radius);
+  color: #00796B;
   color: var(--wand-filter-color);
 }
 
-.wand__inline-filter__string-input--is-focused .ant-input-group-addon fill path {
-  fill: var(--wand-filter-color);
+.wand__inline-filter__datepicker.ant-picker-focused input::-webkit-input-placeholder, .wand__inline-filter__datepicker.ant-picker:hover input::-webkit-input-placeholder {
+  color: #00796B;
+  color: var(--wand-filter-color);
 }
 
-.wand__inline-filter__datepicker.ant-picker {
-  background: #FFF;
-  border-radius: var(--wand-filter-radius);
-}
-
-.wand__inline-filter__datepicker--filled {
-  border-color: var(--wand-filter-color);
-  border-radius: var(--wand-filter-radius);
+.wand__inline-filter__datepicker.ant-picker-focused input::-ms-input-placeholder, .wand__inline-filter__datepicker.ant-picker:hover input::-ms-input-placeholder {
+  color: #00796B;
   color: var(--wand-filter-color);
 }
 
@@ -193,14 +202,18 @@
 .wand__inline-filter__datepicker.ant-picker-focused input::placeholder,
 .wand__inline-filter__datepicker.ant-picker:hover input::placeholder,
 .wand__inline-filter__datepicker--filled input {
+  color: #00796B;
   color: var(--wand-filter-color);
 }
 
 .wand__inline-filter__datepicker.ant-picker-focused .ant-picker-suffix svg path,
 .wand__inline-filter__datepicker.ant-picker:hover .ant-picker-suffix svg path {
+  fill: #00796B;
   fill: var(--wand-filter-color);
 }
 
 .wand__inline-filter__datepicker--filled .ant-picker-suffix svg path {
+  fill: #00796B;
   fill: var(--wand-filter-color)
 }
+

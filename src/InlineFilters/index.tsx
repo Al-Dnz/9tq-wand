@@ -47,6 +47,7 @@ const InlineFilters: React.FC<InlineFiltersProps> = props => {
         const FilterComponent = filterForType[field.input.type] || SelectFilter;
         return (
           <FilterComponent
+            key={field.name}
             field={field}
             value={internalValue[field.name]}
             onChange={onFilterChange}
