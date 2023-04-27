@@ -142,7 +142,7 @@
 .wand__inline-filter__string-input:hover .ant-input,
 .wand__inline-filter__string-input:hover .ant-input-group-addon,
 .wand__inline-filter__datepicker.wand__inline-filter__datepicker--filled {
-  border: 1px solid var(--wand-filter-color);
+  border-color: var(--wand-filter-color) !important;
 }
 
 .wand__inline-filter__string-input .ant-input-group-addon {
@@ -167,7 +167,7 @@
 
 .wand__inline-filter__string-input.wand__inline-filter__string-input--is-focused .ant-input,
 .wand__inline-filter__string-input--is-focused .ant-input-group-addon {
-  border: 1px solid var(--wand-filter-color);
+  border-color: var(--wand-filter-color) !important;
   color: var(--wand-filter-color);
 }
 
