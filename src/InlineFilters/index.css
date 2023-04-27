@@ -15,7 +15,7 @@
 }
 
 .wand__inline-filter__filter:hover, .wand__inline-filter__filter--focused {
-  border-color: var(--wand-filter-color);
+  border: 1px solid var(--wand-filter-color);
   color: var(--wand-filter-color);
 }
 
@@ -80,20 +80,17 @@
 }
 
 .wand__inline-filter__option .ant-checkbox:hover .ant-checkbox-inner {
-  border-color: var(--wand-filter-color);
-}
-
-.wand__inline-filter__option .ant-checkbox-checked::after {
+  border: 1px solid var(--wand-filter-color);
 }
 
 .wand__inline-filter__option .ant-checkbox-checked .ant-checkbox-inner {
   background-color: var(--wand-filter-color);
-  border-color: var(--wand-filter-color);
+  border: 1px solid var(--wand-filter-color);
   filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.2));
 }
 
 .wand__inline-filter__option .ant-checkbox-checked::after {
-  border-color: var(--wand-filter-color);
+  border: 1px solid var(--wand-filter-color);
   border-radius: var(--wand-filter-radius);
 }
 
@@ -143,8 +140,9 @@
 }
 
 .wand__inline-filter__string-input:hover .ant-input,
-.wand__inline-filter__string-input:hover .ant-input-group-addon {
-  border-color: var(--wand-filter-color);
+.wand__inline-filter__string-input:hover .ant-input-group-addon,
+.wand__inline-filter__datepicker.wand__inline-filter__datepicker--filled {
+  border: 1px solid var(--wand-filter-color);
 }
 
 .wand__inline-filter__string-input .ant-input-group-addon {
@@ -162,14 +160,14 @@
 }
 
 .wand__inline-filter__datepicker.ant-picker-focused, .wand__inline-filter__datepicker.ant-picker:hover {
-  border-color: var(--wand-filter-color);
+  border: 1px solid var(--wand-filter-color);
   box-shadow: none;
   border-radius: 4px;
 }
 
 .wand__inline-filter__string-input.wand__inline-filter__string-input--is-focused .ant-input,
 .wand__inline-filter__string-input--is-focused .ant-input-group-addon {
-  border-color: var(--wand-filter-color);
+  border: 1px solid var(--wand-filter-color);
   color: var(--wand-filter-color);
 }
 
@@ -183,7 +181,7 @@
 }
 
 .wand__inline-filter__datepicker--filled {
-  border-color: var(--wand-filter-color);
+  border: 1px solid var(--wand-filter-color);
   border-radius: var(--wand-filter-radius);
   color: var(--wand-filter-color);
 }
