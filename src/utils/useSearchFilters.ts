@@ -1,4 +1,3 @@
-import { useHistory } from 'react-router-dom';
 import { useLocalStorageState, useDebounceFn } from 'ahooks';
 import queryString from "query-string";
 import qs from "qs";
@@ -12,6 +11,7 @@ type OptionsType = {
   definition?: ModelDefinitionType;
   defaultSearch?: any;
   debug?: boolean;
+  history: any;
 }
 
 function useSearchFilters<SearchType>(key: string, options: OptionsType) {
@@ -21,11 +21,10 @@ function useSearchFilters<SearchType>(key: string, options: OptionsType) {
     debug = false,
     definition = undefined,
     defaultSearch = {},
+    history,
   } = options || {};
 
   if(!enabled) return {};
-
-  const history = useHistory();
 
   const [page, setPage] = useLocalStorageState<string | number>(
     `${key}-page`,
@@ -73,13 +72,13 @@ function useSearchFilters<SearchType>(key: string, options: OptionsType) {
         `${key0}${keysRest.map(a => `[${a}]`).join('')}=${value}`).join('&');
       setPage(1)
       const pathname = window.location?.pathname + '?' + nestedParams;
-      history.push(pathname)
+      if(history) history.push(pathname)
     }
   };
 
   const onReset = () => {
     setSearch({} as SearchType)
-    if(updateLocation) history.push(window.location.pathname)
+    if(updateLocation && history) history.push(window.location.pathname)
   };
 
   const onPageChange = (page: number, pageSize: number) => {
@@ -91,7 +90,7 @@ function useSearchFilters<SearchType>(key: string, options: OptionsType) {
           { ...search, page, perPage: pageSize },
           { arrayFormat: 'bracket', skipNull: true },
         );
-      history.replace(pathname);
+      if(history) history.replace(pathname);
     }
   };
 

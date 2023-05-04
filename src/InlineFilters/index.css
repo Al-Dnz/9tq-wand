@@ -5,7 +5,7 @@
   --wand-filter-radius: 4px;
 }
 
-.wand__inline-filter__filter {
+.wand__inline-filter__filter, .wand__filter-toggler__button{
   padding: 5px 8px;
   border-radius: 4px;
   background-color: #FFF;
@@ -14,9 +14,24 @@
   cursor: pointer;
 }
 
-.wand__inline-filter__filter:hover, .wand__inline-filter__filter--focused {
+.wand__inline-filter__filter:hover, .wand__inline-filter__filter--focused, .wand__filter-toggler__button:hover {
   border: 1px solid var(--wand-filter-color);
   color: var(--wand-filter-color);
+}
+
+.wand__filter-toggler__button {
+  display: flex;
+  align-items: center;
+  border-style: dashed !important;
+}
+
+.wand__filter-toggler__icon {
+  display: flex;
+  align-items: center;
+}
+
+.wand__filter-toggler__button:hover svg path {
+  fill: var(--wand-filter-color);
 }
 
 .wand__inline-filter__search-input {
@@ -89,6 +104,10 @@
   filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.2));
 }
 
+.wand__inline-filter__option .ant-checkbox-indeterminate .ant-checkbox-inner::after {
+  background-color: var(--wand-filter-color);
+}
+
 .wand__inline-filter__option .ant-checkbox-checked::after {
   border: 1px solid var(--wand-filter-color);
   border-radius: var(--wand-filter-radius);
@@ -99,11 +118,20 @@
   color: var(--wand-filter-color)
 }
 
-.wand__inline-filter__options-container {
+.wand__inline-filter__options-container, .wand__inline-filter__footer {
   margin-left: -16px;
   margin-right: -16px;
+}
+
+.wand__inline-filter__footer {
+  border-top: 1px solid rgba(205, 205, 205, 0.6);
   max-height: 300px;
   overflow-y: scroll;
+  padding: 0 16px;
+  padding-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .wand__inline-filter__popover {

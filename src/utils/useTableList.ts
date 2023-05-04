@@ -17,6 +17,7 @@ type SearchOptions = {
   definition: ModelDefinitionType;
   updateLocation?: boolean;
   key?: string;
+  history: any;
 };
 
 function useTableList<RecordType = unknown, SearchType = unknown>(name: string, options: UseTableListProps, searchOptions?: SearchOptions) {
@@ -35,6 +36,7 @@ function useTableList<RecordType = unknown, SearchType = unknown>(name: string, 
     debug,
     enabled: !!searchOptions,
     updateLocation: searchOptions?.updateLocation || false,
+    history: searchOptions?.history,
     definition: searchOptions?.definition,
   });
   const [internalPagination, setInternalPagination] = useState<{pageSize: number; page: number;}>({ pageSize: 25, page: 1 });

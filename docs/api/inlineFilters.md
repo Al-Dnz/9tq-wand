@@ -26,11 +26,19 @@ export default () => {
         value={{ activeOn: '2023-11-12' }}
         onReset={() => console.log("reset")}
         resetText="Réinitialiser les filtres"
+        toggle={{
+          key: 'projects',
+          text: 'Filtres',
+          selectAllText: 'Tous les fitlres',
+          // icon: <UserOutlined />
+        }}
         onChange={(object) => console.log(object)}
         schema={[
           {
             name: 'nameEq',
             icon: <UserOutlined />,
+            title: 'Nom utilisateur',
+            toggleable: false,
             style: {
               width: 300,
             },
@@ -42,6 +50,7 @@ export default () => {
           {
             name: 'activeOn',
             label: 'Actif le',
+            toggleable: false,
             input: {
               type: 'date',
               inputProps: {
@@ -63,11 +72,13 @@ export default () => {
           {
             name: 'clients',
             label: 'Clients',
+            title: 'Clients (multiple)',
             input: {
               type: 'select',
               options: [{ value: 'HP', label: 'Harry Potter' }, { value: 'DM', label: 'Drago Malefoy' }],
               multiple: true,
               searchPlaceholder: 'Rechercher...',
+              selectAllText: 'Tous les clients',
             }
           }
         ]}

@@ -11,6 +11,8 @@ group:
 
 # useTableList
 
+Attention
+
 Ce hook permet de gérer les tableaux de données.
 
 - `name` *(required)* : Nom de l'objet à récupérer dans la réponse du serveur GraphQL.
@@ -24,6 +26,7 @@ Ce hook permet de gérer les tableaux de données.
   - `key` : une chaîne de caractères qui indique la clé à utiliser pour stocker les paramètres de recherche dans le local-storage, `name` par défaut.
   - `definition` : un objet qui décrit le modèle de données de la recherche.
   - `updateLocation` : un booléen qui indique si l'URL doit être mise à jour ou non. La valeur par défaut est false.
+  - `history` *(required)*: Objet qui contient les fonctions push et replace (non compatibles directement avec react-router-dom >6) - obligatoire pour utiliser la fonction de recherche dans l'url
 
 
 ## Valeur de retour

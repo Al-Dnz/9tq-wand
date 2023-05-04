@@ -13,6 +13,14 @@ type FilterProps = {
   onChange: (name: string, value: any) => void;
 };
 
+const sortByPresenceInArray = (array) => (a, b) => {
+  if (array.includes(a.value) && !array.includes(b.value))
+    return 1;
+  if (!array.includes(a.value) && array.includes(b.value))
+    return -1;
+  return 0;
+}
+
 const SelectFilter: React.FC<FilterProps> = props => {
   const {
     field,
@@ -24,12 +32,16 @@ const SelectFilter: React.FC<FilterProps> = props => {
     multiple = false,
     allowSearch = true,
     searchPlaceholder,
+    selectAllText = 'All',
     options = [],
   } = (field.input || {}) as SelectInputProps;
   const {
     selected: internalValue,
     setSelected,
+    allSelected,
+    partiallySelected,
     unSelectAll,
+    selectAll,
     toggle
   } = useSelections(options.map(o => o.value), value ? Array.isArray(value || []) ? value : [value] : []);
 
@@ -65,7 +77,19 @@ const SelectFilter: React.FC<FilterProps> = props => {
     }
   }
 
-  const filteredOptions = options.filter(o => !search || filterOption(search, o));
+  const onSelectAll = () => {
+    onChange(field.name, options.map(o => o.value))
+    selectAll();
+  }
+
+  const onUnselectAll = () => {
+    onChange(field.name, undefined);
+    unSelectAll();
+  }
+
+  let filteredOptions = options.filter(o => !search || filterOption(search, o) || internalValue.includes(o.value))
+  if (search && search.length > 0) filteredOptions = filteredOptions.sort(sortByPresenceInArray(internalValue));
+
   const popoverContent = (
     <>
       {allowSearch && (
@@ -85,10 +109,20 @@ const SelectFilter: React.FC<FilterProps> = props => {
         />
       )}
       <div className="wand__inline-filter__options-container">
+        {multiple && !search && (
+          <div key='select-all' className={`wand__inline-filter__option ${allSelected ? 'wand__inline-filter__option--is-selected' : ''}`} onClick={allSelected ? onUnselectAll : onSelectAll}>
+            <Space>
+              <Checkbox indeterminate={partiallySelected} checked={allSelected} />
+              {selectAllText}
+            </Space>
+          </div>
+        )}
         {filteredOptions.map(o => (
           <div key={o.value} className={`wand__inline-filter__option ${internalValue?.includes(o.value) ? 'wand__inline-filter__option--is-selected' : ''}`} onClick={() => onSelect(o.value)}>
             <Space>
-              <Checkbox checked={internalValue?.includes(o.value)} />
+              {multiple && (
+                <Checkbox checked={internalValue?.includes(o.value)} />
+              )}
               {o.children || o.label}
             </Space>
           </div>

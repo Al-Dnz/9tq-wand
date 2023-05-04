@@ -27,6 +27,7 @@ export type SelectInputProps = {
   allowSearch?: boolean;
   searchPlaceholder?: string;
   noOptionsFound?: string;
+  selectAllText?: string;
   className?: string;
 };
 
@@ -44,8 +45,10 @@ export type InputType =
 
 export type FieldItemType = {
   label?: string;
+  title?: string;
   icon?: any;
   name: string;
+  toggleable?: boolean;
   input: InputType;
   style?: React.CSSProperties;
   className?: string;
@@ -59,3 +62,13 @@ export type FieldType = {
 export type FieldSchema = FieldType;
 
 export type InlineFilterSchema = Array<FieldSchema>
+
+
+export type FilterTogglerType = {
+  key: string;
+  text?: string;
+  selectAllText?: string;
+  cancelText?: string;
+  okText?: string;
+  icon?: any;
+}

@@ -70,8 +70,7 @@
     "query-string": "<7",
     "react-inlinesvg": "<4",
     "react-intl": "<6",
-    "react-on-rails": "12.3",
-    "react-router-dom": "<6"
+    "react-on-rails": "12.3"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",

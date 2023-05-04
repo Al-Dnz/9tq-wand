@@ -17,6 +17,7 @@ Il prend deux arguments :
 
 - `key` Chaîne de caractères utilisée pour identifier les filtres de recherche dans le local-storage.
 - `options` un objet qui peut contenir les propriétés suivantes :
+  - `history` *(required)*: (requis) Objet qui contient les fonctions push et replace (non compatibles directement avec react-router-dom >6)
   - `debug` un booléen indiquant s'il faut activer le mode de débogage ou non.
   - `defaultSearch` un objet contenant les valeurs par défaut des filtres de recherche.
   - `definition` un objet représentant la définition du modèle pour la conversion d'attributs. (cf. [ModelDefinition](/9tq-wand/api/model-definition))
