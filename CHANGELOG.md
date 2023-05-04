@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.4.1](https://github.com/9troisquarts/9tq-wand/compare/v2.4.0...v2.4.1) (2023-05-04)
+
+
+### Bug Fixes
+
+* Fix max height of select ([eefaedb](https://github.com/9troisquarts/9tq-wand/commit/eefaedb4c4ab2589b2042e4e7c1224b092634b80))
+
 ## [2.4.0](https://github.com/9troisquarts/9tq-wand/compare/v2.3.8...v2.4.0) (2023-05-04)
 
 
