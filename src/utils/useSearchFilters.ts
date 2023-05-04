@@ -104,17 +104,17 @@ function useSearchFilters<SearchType>(key: string, options: OptionsType) {
   )
 
   const getPairs = (obj, keys = []) =>
-  Object.entries(obj).reduce((pairs, [key, value]) => {
-    if (value) {
-      if (typeof value === 'object')
-        // @ts-ignore
-        pairs.push(...getPairs(value, [...keys, key]));
-      else
-        // @ts-ignore
-        pairs.push([[...keys, key], value]);
-    }
-    return pairs;
-  }, []);
+    Object.entries(obj).reduce((pairs, [key, value]) => {
+      if (value) {
+        if (typeof value === 'object')
+          // @ts-ignore
+          pairs.push(...getPairs(value, [...keys, key]));
+        else
+          // @ts-ignore
+          pairs.push([[...keys, key], value]);
+      }
+      return pairs;
+    }, []);
 
   return {
     // @ts-ignore

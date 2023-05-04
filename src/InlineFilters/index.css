@@ -123,10 +123,13 @@
   margin-right: -16px;
 }
 
-.wand__inline-filter__footer {
-  border-top: 1px solid rgba(205, 205, 205, 0.6);
+.wand__inline-filter__options-container {
   max-height: 300px;
   overflow-y: scroll;
+}
+
+.wand__inline-filter__footer {
+  border-top: 1px solid rgba(205, 205, 205, 0.6);
   padding: 0 16px;
   padding-top: 12px;
   display: flex;
