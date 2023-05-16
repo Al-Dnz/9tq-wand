@@ -9,7 +9,7 @@ import moment, { isMoment } from 'moment';
 type FilterProps = {
   field: FieldSchema;
   value: any;
-  onChange: (name: string, value: any) => void;
+  onChange: (values: any) => void;
 };
 
 const DateFilter: React.FC<FilterProps> = props => {
@@ -31,7 +31,7 @@ const DateFilter: React.FC<FilterProps> = props => {
 
   const handleChange = (value) => {
     setInternalValue(value);
-    onChange(field.name, value)
+    onChange({ [field.name]: value })
   }
 
   return (

@@ -42,9 +42,9 @@ const InlineFilters: React.FC<InlineFiltersProps> = props => {
     handleChange(values)
   }
 
-  const onFilterChange = (name, value) => submitValues(omit({
+  const onFilterChange = (values: any) => submitValues(omit({
     ...internalValue,
-    [name]: value
+    ...values
   }, toggle ? hiddenFilters : []));
 
   const onFilterToggleChange = (names) => {
@@ -65,9 +65,9 @@ const InlineFilters: React.FC<InlineFiltersProps> = props => {
         const FilterComponent = filterForType[field.input.type] || SelectFilter;
         return (
           <FilterComponent
-            key={field.name}
+            key={Array.isArray(field.name) ? field.name.join('--') : field.name}
             field={field}
-            value={internalValue[field.name]}
+            value={Array.isArray(field.name) ? field.name.reduce((acc, name) => { acc[name] = internalValue[name]; return acc; }, {}) : internalValue[field.name]}
             onChange={onFilterChange}
           />
         )

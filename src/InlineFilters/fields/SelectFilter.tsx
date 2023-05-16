@@ -10,7 +10,7 @@ import { filterOption } from '../_utils';
 type FilterProps = {
   field: FieldSchema;
   value: any;
-  onChange: (name: string, value: any) => void;
+  onChange: (values: any) => void;
 };
 
 const sortByPresenceInArray = (array) => (a, b) => {
@@ -29,12 +29,15 @@ const SelectFilter: React.FC<FilterProps> = props => {
   } = props;
 
   const {
-    multiple = false,
-    allowSearch = true,
-    searchPlaceholder,
-    selectAllText = 'All',
-    options = [],
-  } = (field.input || {}) as SelectInputProps;
+    inputProps: {
+      multiple = false,
+      allowSearch = true,
+      searchPlaceholder = undefined,
+      selectAllText = 'All',
+      options = [],
+    } = {}
+  } = (field?.input || {}) as SelectInputProps;
+
   const {
     selected: internalValue,
     setSelected,
@@ -68,22 +71,22 @@ const SelectFilter: React.FC<FilterProps> = props => {
       if(internalValue.includes(key)) {
         const nextValues = [...internalValue];
         nextValues.splice(nextValues.indexOf(key), 1)
-        onChange(field.name, nextValues)
+        onChange({ [field.name]: nextValues })
       } else {
-        onChange(field.name, [...internalValue, key])
+        onChange({[field.name]: [...internalValue, key]})
       }
     } else {
-      onChange(field.name, internalValue.includes(key) ? undefined : key)
+      onChange({[field.name]: internalValue.includes(key) ? undefined : key})
     }
   }
 
   const onSelectAll = () => {
-    onChange(field.name, options.map(o => o.value))
+    onChange({[field.name]: options.map(o => o.value)})
     selectAll();
   }
 
   const onUnselectAll = () => {
-    onChange(field.name, undefined);
+    onChange({[field.name]: undefined});
     unSelectAll();
   }
 

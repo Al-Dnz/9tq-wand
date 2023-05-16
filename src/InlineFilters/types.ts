@@ -1,4 +1,5 @@
 import { DatePickerProps } from "antd";
+import { RangePickerProps } from "antd/lib/date-picker";
 
 type Option = {
   value: any;
@@ -9,45 +10,62 @@ type Option = {
 
 export type DateInputProps = {
   type: 'date';
-  format?: string;
-  inputProps: DatePickerProps;
-  className?: string;
+  inputProps?: {
+    className?: string;
+  } & DatePickerProps;
 }
 
 export type DatePickerInputProps = {
   type: 'daterange';
-  format?: string;
-  className?: string;
+  inputProps?: {
+    className?: string;
+  } & RangePickerProps;
 }
 
 export type SelectInputProps = {
   type: 'select';
-  options: Option[];
-  multiple?: boolean;
-  allowSearch?: boolean;
-  searchPlaceholder?: string;
-  noOptionsFound?: string;
-  selectAllText?: string;
-  className?: string;
+  inputProps?: {
+    options: Option[];
+    multiple?: boolean;
+    allowSearch?: boolean;
+    searchPlaceholder?: string;
+    noOptionsFound?: string;
+    selectAllText?: string;
+    className?: string;
+  }
 };
 
 export type StringInputProps = {
   type: 'string';
-  placeholder?: string;
-  className?: string;
+  inputProps?: {
+    placeholder?: string;
+    className?: string;
+  }
+};
+
+
+export type BooleanInputProps = {
+  type: 'boolean';
+  inputProps: {
+    placeholder?: string;
+    className?: string;
+    inverted?: boolean;
+    text: string
+  }
 };
 
 export type InputType =
   | DatePickerInputProps
   | SelectInputProps
   | DateInputProps
-  | StringInputProps;
+  | StringInputProps
+  | BooleanInputProps;
 
 export type FieldItemType = {
   label?: string;
   title?: string;
   icon?: any;
-  name: string;
+  name: string | string[];
   toggleable?: boolean;
   input: InputType;
   style?: React.CSSProperties;

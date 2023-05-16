@@ -3,6 +3,8 @@ import React from 'react';
 import DateFilter from './fields/DateFilter';
 import SelectFilter from './fields/SelectFilter';
 import StringFilter from './fields/StringFilter';
+import BooleanFilter from './fields/BooleanFilter';
+import DateRangeFilter from './fields/DateRangeFilter';
 
 const renderDate = () => {
   return (
@@ -32,6 +34,8 @@ export const filterForType = {
   select: SelectFilter,
   date: DateFilter,
   string: StringFilter,
+  boolean: BooleanFilter,
+  daterange: DateRangeFilter,
 }
 
 export const filterOption = (input: string, option: any) =>

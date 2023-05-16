@@ -21,7 +21,7 @@ export default () => {
 
 
   return (
-    <Space direction="vertical">
+    <Space direction="vertical" wrap>
       <InlineFilters
         value={{ activeOn: '2023-11-12' }}
         onReset={() => console.log("reset")}
@@ -44,7 +44,9 @@ export default () => {
             },
             input: {
               type: 'string',
-              placeholder: 'Rechercher par nom...'
+              inputProps: {
+                placeholder: 'Rechercher par nom...'
+              }
             }
           },
           {
@@ -59,14 +61,36 @@ export default () => {
             }
           },
           {
+            name: ['startingOn', 'endingOn'],
+            title: 'Activité (range)',
+            label: 'Actif entre le',
+            input: {
+              type: 'daterange',
+              inputProps: {
+                format: 'L',
+                placeholder: ['Début', 'Fin']
+              }
+            }
+          },
+          {
             name: 'users',
             label: 'Utilisateur',
             icon: <UserOutlined />,
             input: {
               type: 'select',
-              options: [{ value: 'HP', label: 'Harry Potter' }, { value: 'DM', label: 'Drago Malefoy' }],
-              noOptionsFound: 'Aucun utilisateur ne correspond',
-              multiple: false,
+              inputProps: {
+                options: [{ value: 'HP', label: 'Harry Potter' }, { value: 'DM', label: 'Drago Malefoy' }],
+                noOptionsFound: 'Aucun utilisateur ne correspond',
+                multiple: false
+              },
+            }
+          },
+          {
+            name: 'onlyMine',
+            label: 'Uniquement les miens',
+            icon: <UserOutlined />,
+            input: {
+              type: 'boolean'
             }
           },
           {
@@ -75,10 +99,12 @@ export default () => {
             title: 'Clients (multiple)',
             input: {
               type: 'select',
-              options: [{ value: 'HP', label: 'Harry Potter' }, { value: 'DM', label: 'Drago Malefoy' }],
-              multiple: true,
-              searchPlaceholder: 'Rechercher...',
-              selectAllText: 'Tous les clients',
+              inputProps: {
+                options: [{ value: 'HP', label: 'Harry Potter' }, { value: 'DM', label: 'Drago Malefoy' }],
+                multiple: true,
+                searchPlaceholder: 'Rechercher...',
+                selectAllText: 'Tous les clients',
+              }
             }
           }
         ]}

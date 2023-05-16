@@ -6,7 +6,7 @@ import '../index.css';
 type FilterProps = {
   field: FieldSchema;
   value: any;
-  onChange: (name: string, value: any) => void;
+  onChange: (values: any) => void;
 };
 
 const StringFilter: React.FC<FilterProps> = props => {
@@ -17,7 +17,10 @@ const StringFilter: React.FC<FilterProps> = props => {
   } = props;
 
   const {
-    placeholder,
+    inputProps: {
+      placeholder,
+      className
+    } = {},
   } = (field.input || {}) as StringInputProps;
 
   const [isFocused, setIsFocused] = useState<boolean>(false);
@@ -28,14 +31,21 @@ const StringFilter: React.FC<FilterProps> = props => {
     setInternalValue(value);
   }, [value]);
 
-  const handleChange = (e) => {
+  const handleChange = (e: any) => {
     setInternalValue(e.target.value);
-    onChange(field.name, e.target.value)
+    onChange({ [field.name]: e.target.value })
   }
+
+  const classNames = [
+    'wand__inline-filter__string-input',
+    className,
+    field.className,
+    isFocused || (internalValue && internalValue.length > 0) ? 'wand__inline-filter__string-input--is-focused' : undefined
+  ].filter(Boolean)
 
   return (
     <Input
-      className={`wand__inline-filter__string-input ${field.className || ''} ${isFocused || (internalValue && internalValue.length > 0) ? 'wand__inline-filter__string-input--is-focused' : ''}`}
+      className={classNames.join(' ')}
       onFocus={() => setIsFocused(true)}
       onBlur={() => setIsFocused(false)}
       style={field.style || {}}

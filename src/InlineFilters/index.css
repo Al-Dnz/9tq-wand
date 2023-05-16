@@ -1,4 +1,5 @@
 :root{
+  --wand-filter-padding: 8px 11px;
   --wand-filter-color: #00796B;
   --wand-filter-option-selected-color: rgba(0, 121, 107, 0.1);
   --wand-popover-radius: 10px;
@@ -6,7 +7,7 @@
 }
 
 .wand__inline-filter__filter, .wand__filter-toggler__button{
-  padding: 5px 8px;
+  padding: var(--wand-filter-padding);
   border-radius: 4px;
   background-color: #FFF;
   border: 1px solid rgba(205, 205, 205, 0.6);
@@ -14,7 +15,7 @@
   cursor: pointer;
 }
 
-.wand__inline-filter__filter:hover, .wand__inline-filter__filter--focused, .wand__filter-toggler__button:hover {
+.wand__inline-filter__filter:hover, .wand__inline-filter__filter--focused, .wand__inline-filter__boolean--checked, .wand__filter-toggler__button:hover {
   border: 1px solid var(--wand-filter-color);
   color: var(--wand-filter-color);
 }
@@ -89,7 +90,7 @@
   transition: background-color linear .1s;
 }
 
-.wand__inline-filter__option .ant-checkbox-inner {
+.wand__inline-filter__option .ant-checkbox-inner, .wand__inline-filter__boolean .ant-checkbox-inner {
   border-radius: var(--wand-filter-radius);
   border: 1px solid #CDCDCD;
 }
@@ -98,7 +99,8 @@
   border: 1px solid var(--wand-filter-color);
 }
 
-.wand__inline-filter__option .ant-checkbox-checked .ant-checkbox-inner {
+.wand__inline-filter__option .ant-checkbox-checked .ant-checkbox-inner,
+.wand__inline-filter__boolean .ant-checkbox-checked .ant-checkbox-inner {
   background-color: var(--wand-filter-color);
   border: 1px solid var(--wand-filter-color);
   filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.2));
@@ -108,7 +110,7 @@
   background-color: var(--wand-filter-color);
 }
 
-.wand__inline-filter__option .ant-checkbox-checked::after {
+.wand__inline-filter__option .ant-checkbox-checked::after, .wand__inline-filter__boolean .ant-checkbox-checked::after {
   border: 1px solid var(--wand-filter-color);
   border-radius: var(--wand-filter-radius);
 }
@@ -157,6 +159,10 @@
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
+.wand__inline-filter__datepicker .ant-picker-active-bar {
+  background: var(--wand-filter-color);
+}
+
 .wand__inline-filter__string-input .ant-input:focus,
 .wand__inline-filter__string-input .ant-input-focused,
 .wand__inline-filter__datepicker.ant-picker,
@@ -168,6 +174,7 @@
 
 .wand__inline-filter__string-input .ant-input {
   background-color: #FFF;
+  padding: var(--wand-filter-padding);
 }
 
 .wand__inline-filter__string-input:hover .ant-input,
@@ -209,6 +216,7 @@
 .wand__inline-filter__datepicker.ant-picker {
   background: #FFF;
   border-radius: var(--wand-filter-radius);
+  padding: var(--wand-filter-padding);
 }
 
 .wand__inline-filter__datepicker--filled {
