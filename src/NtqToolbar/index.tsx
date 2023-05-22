@@ -57,6 +57,7 @@ const NtqToolbar: React.FC<NtqToolbarProps> = (props) => {
   useEffect(() => {
     if (enabled) {
       document.body.classList.add(bodyClass);
+      document.body.classList.add('ntq-toolbar-enabled');
       return () => document.body.classList.remove(bodyClass);
     }
   });

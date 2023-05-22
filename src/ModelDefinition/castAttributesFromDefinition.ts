@@ -91,6 +91,10 @@ const reverseCastValue = (type, value) => {
         },
         proximity: value.proximity ? parseInt(value.proximity, 10) : undefined,
       };
+    case 'Boolean':
+      if(!value) return null
+
+      return value === "true" || value === "1" || value
     case 'Float':
       return toFloat(value);
     case 'Integer':

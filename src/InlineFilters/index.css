@@ -8,7 +8,7 @@
 
 .wand__inline-filter__filter, .wand__filter-toggler__button{
   padding: var(--wand-filter-padding);
-  border-radius: 4px;
+  border-radius: var(--wand-filter-radius);
   background-color: #FFF;
   border: 1px solid rgba(205, 205, 205, 0.6);
   transition: all linear .1s;
@@ -200,7 +200,7 @@
 .wand__inline-filter__datepicker.ant-picker-focused, .wand__inline-filter__datepicker.ant-picker:hover {
   border: 1px solid var(--wand-filter-color);
   box-shadow: none;
-  border-radius: 4px;
+  border-radius: var(--wand-filter-radius);
 }
 
 .wand__inline-filter__string-input.wand__inline-filter__string-input--is-focused .ant-input,
