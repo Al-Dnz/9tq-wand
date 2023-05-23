@@ -86,6 +86,9 @@ const UserList = () => {
     paginate: true,
   }, {
     definition: userModelDefinition,
+    history: () => {
+      replace: (url) => undefined
+    },
     updateLocation: false,
     key: 'users',
   });

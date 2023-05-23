@@ -8,6 +8,7 @@ export { default as useTableList } from './utils/useTableList';
 export { default as useSearchFilters } from './utils/useSearchFilters';
 export { default as AutoLink } from './AutoLink';
 export { default as ContextMenu } from './ContextMenu';
+export { default as DropdownTag } from './DropdownTag';
 export { default as NtqToolbar } from './NtqToolbar';
 export { default as NtqToolbarProvider } from './NtqToolbar/NtqToolbarProvider';
 export { default as useI18n } from './utils/useI18n';

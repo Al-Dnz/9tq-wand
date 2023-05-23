@@ -116,18 +116,3 @@ export default () => {
 
 
 ## API
-
-### NtqToolbarProvider
-
-| Nom | Description | Type | Default |
-|---|---|---|---|
-| **enabled** | | boolean | true |
-| **impersonation** | Enabled or disabled impersonation | boolean \| { userTypes: string[] } | false |
-| **baseUrl** | Enabled or disabled impersonation | string | /ntq_tools |
-
-### NtqToolbar
-
-| Nom | Description | Type | Default |
-|---|---|---|---|
-| **enabled** | Hide/Show the toolbar | boolean | true |
-
