@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.6.0](https://github.com/9troisquarts/9tq-wand/compare/v2.5.2...v2.6.0) (2023-05-23)
+
+
+### Features
+
+* Dropdown tag ([0987a34](https://github.com/9troisquarts/9tq-wand/commit/0987a3418b8e2aa9f99a5d884835a2c03f689036))
+
 ### [2.5.2](https://github.com/9troisquarts/9tq-wand/compare/v2.5.1...v2.5.2) (2023-05-22)
 
 ### [2.5.1](https://github.com/9troisquarts/9tq-wand/compare/v2.5.0...v2.5.1) (2023-05-22)
