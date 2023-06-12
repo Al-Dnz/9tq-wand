@@ -22,6 +22,7 @@ const { Dragger } = Upload;
 type ImportModalProps = {
   open?: boolean;
   title?: string | React.ReactNode;
+  allowImportOnError?: boolean;
   importType: string;
   onCancel?: () => void;
   translate?: (key: string) => void;
@@ -62,7 +63,7 @@ const stateForImport = (importFile) => {
 };
 
 const ImportModalContent: React.FC<ImportModalProps> = (props) => {
-  const { importType, onCancel, onCompleted } = props;
+  const { importType, allowImportOnError = false, onCancel, onCompleted } = props;
   const { importer, importFile, onReset, onImport, onProcessImport } = useImportModal({
     configuration: config,
     importType,
@@ -186,7 +187,7 @@ const ImportModalContent: React.FC<ImportModalProps> = (props) => {
                 {translate ? translate('excelsior_modal.cancel') : 'Cancel'}
               </Button>
               <Button onClick={onProcessImport} type="primary">
-                {translate ? translate('excelsior_modal.import') : 'Cancel'}
+                {translate ? translate('excelsior_modal.import') : 'Import'}
               </Button>
             </Space>
           </div>
@@ -306,9 +307,15 @@ const ImportModalContent: React.FC<ImportModalProps> = (props) => {
             ) : null
           }
           extra={[
-            <Button type="text" key="reset" onClick={onCancel}>
-              {translate ? translate('excelsior_modal.finish_and_close') : 'Finish and close'}
-            </Button>,
+            allowImportOnError ? (
+              <Button onClick={onProcessImport} type="primary">
+                  {translate ? translate('excelsior_modal.import') : 'Import'}
+              </Button>
+            ) : (
+              <Button type="text" key="reset" onClick={onCancel}>
+                {translate ? translate('excelsior_modal.finish_and_close') : 'Finish and close'}
+              </Button>
+            ),
             <Button type="primary" key="close" onClick={onReset}>
               {translate ? translate('excelsior_modal.new_import') : 'New import'}
             </Button>,

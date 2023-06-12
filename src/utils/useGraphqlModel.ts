@@ -233,12 +233,12 @@ function useGraphqlModel<RecordType = unknown>(modelName: string, opts: GraphqlM
         if(options?.onCompleted) options.onCompleted(data);
       }
 
-      if (id || options.id || singleton) {
+      if (id || options?.id || singleton) {
         if(update)
           update({
             variables: {
               input: {
-                id: id || options.id,
+                id: id || options?.id,
                 attributes,
                 ...(options?.variables || {})
               },

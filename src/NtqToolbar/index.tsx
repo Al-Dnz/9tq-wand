@@ -17,7 +17,7 @@ const Container = styled.div`
   width: 100%;
   color: white;
   padding: 0 16px;
-  z-index: 1000;
+  z-index: 100000000;
 `;
 
 const Right = styled.div`
