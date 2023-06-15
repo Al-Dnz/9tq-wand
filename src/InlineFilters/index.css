@@ -147,11 +147,9 @@
   min-width: 300px;
 };
 
-.wand__inline-filter__badge {}
-
 .wand__inline-filter__badge .ant-badge-count{
-  color: var(--wand-filter-color);
-  background-color: var(--wand-filter-option-selected-color);
+  color: var(--wand-filter-color) !important;
+  background-color: var(--wand-filter-option-selected-color) !important;
 }
 
 .wand__inline-filter__popover .ant-popover-inner {
@@ -241,3 +239,5 @@
 .wand__inline-filter__datepicker--filled .ant-picker-suffix svg path {
   fill: var(--wand-filter-color)
 }
+
+
