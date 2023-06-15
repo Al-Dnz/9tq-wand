@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.7.2](https://github.com/9troisquarts/9tq-wand/compare/v2.7.1...v2.7.2) (2023-06-15)
+
+
+### Bug Fixes
+
+* change color of badge count ([77e2883](https://github.com/9troisquarts/9tq-wand/commit/77e28830e1ed046ea36e85f934f02fda5b313d94))
+
 ### [2.7.1](https://github.com/9troisquarts/9tq-wand/compare/v2.7.0...v2.7.1) (2023-06-12)
 
 ## [2.7.0](https://github.com/9troisquarts/9tq-wand/compare/v2.6.0...v2.7.0) (2023-06-12)
