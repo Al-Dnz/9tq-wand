@@ -6,13 +6,15 @@ import { ConfigurationType, ImporterType } from './types';
 const useImportModal = ({
   configuration,
   importType,
+  defaultValue = {},
+  defaultImportFile = {},
 }: {
   configuration: ConfigurationType;
   importType: string;
 }) => {
   const [loading, setLoading] = useState<boolean>(false);
-  const [importer, setImporter] = useState<ImporterType | undefined>(undefined);
-  const [importFile, setImportFile] = useState(undefined);
+  const [importer, setImporter] = useState<ImporterType | undefined>(defaultValue);
+  const [importFile, setImportFile] = useState(defaultImportFile);
 
   const getStatus = (id) => {
     if (!id) return new Promise((resolve, reject) => resolve({}));

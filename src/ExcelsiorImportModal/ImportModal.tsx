@@ -24,6 +24,7 @@ type ImportModalProps = {
   title?: string | React.ReactNode;
   allowImportOnError?: boolean;
   importType: string;
+  debug?: boolean;
   onCancel?: () => void;
   translate?: (key: string) => void;
   onCompleted?: () => void;
@@ -62,13 +63,16 @@ const stateForImport = (importFile) => {
   return { status: 'wait' };
 };
 
-const ImportModalContent: React.FC<ImportModalProps> = (props) => {
-  const { importType, allowImportOnError = false, onCancel, onCompleted } = props;
+export const ImportModalContent: React.FC<ImportModalProps> = (props) => {
+  const { importType, allowImportOnError = false, debug = false, onCancel, onCompleted } = props;
   const { importer, importFile, onReset, onImport, onProcessImport } = useImportModal({
     configuration: config,
     importType,
+    defaultImporter: props.importer || {},
+    defaultImportFile: props.importFile || {},
     onCompleted,
   });
+
   const translate = props.translate || config.translate;
 
   //if (!importer) return null;
@@ -307,15 +311,9 @@ const ImportModalContent: React.FC<ImportModalProps> = (props) => {
             ) : null
           }
           extra={[
-            allowImportOnError ? (
-              <Button onClick={onProcessImport} type="primary">
-                  {translate ? translate('excelsior_modal.import') : 'Import'}
-              </Button>
-            ) : (
-              <Button type="text" key="reset" onClick={onCancel}>
-                {translate ? translate('excelsior_modal.finish_and_close') : 'Finish and close'}
-              </Button>
-            ),
+            <Button type="text" key="reset" onClick={onCancel}>
+              {translate ? translate('excelsior_modal.finish_and_close') : 'Finish and close'}
+            </Button>,
             <Button type="primary" key="close" onClick={onReset}>
               {translate ? translate('excelsior_modal.new_import') : 'New import'}
             </Button>,

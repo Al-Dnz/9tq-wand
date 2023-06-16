@@ -190,9 +190,13 @@ function castAttributesFromModel(
           formattedModel[key] =
             typeof attributes[key] !== 'string' ? attributes[key].format() : attributes[key];
           break;
-        case 'password':
-        case 'files':
-        case 'file':
+          case 'Files':
+            if (attributes[key]) formattedModel[key] = attributes[key].filter(f => f instanceof File);
+            break;
+          case 'File':
+            if (attributes[key] && attributes[key] instanceof File) formattedModel[key] = attributes[key];
+            break;
+          case 'password':
           if (attributes[key]) formattedModel[key] = attributes[key];
           break;
         case 'nested':

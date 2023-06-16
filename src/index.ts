@@ -13,9 +13,8 @@ export { default as NtqToolbar } from './NtqToolbar';
 export { default as NtqToolbarProvider } from './NtqToolbar/NtqToolbarProvider';
 export { default as useI18n } from './utils/useI18n';
 export { default as CSVNotice } from './CSVNotice';
-export { default as ExcelsiorImportModal } from './ExcelsiorImportModal';
+export { default as ExcelsiorImportModal, ExcelsiorImportModalContent as ExcelsiorImportModalContent } from './ExcelsiorImportModal';
 export { default as useGraphqlModel } from './utils/useGraphqlModel';
-
 // Inline Filters
 export { default as InlineFilters } from './InlineFilters';
 export type { InlineFilterSchema } from './InlineFilters/types';
