@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.7.4](https://github.com/9troisquarts/9tq-wand/compare/v2.7.3...v2.7.4) (2023-07-17)
+
+
+### Bug Fixes
+
+* fix an issue with toggle when field name is an array ([4bed893](https://github.com/9troisquarts/9tq-wand/commit/4bed893af584b5cafb1b44fb38067d6ef1d3226e))
+
 ### [2.7.3](https://github.com/9troisquarts/9tq-wand/compare/v2.7.2...v2.7.3) (2023-07-12)
 
 ### [2.7.2](https://github.com/9troisquarts/9tq-wand/compare/v2.7.1...v2.7.2) (2023-06-15)
