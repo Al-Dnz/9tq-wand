@@ -56,7 +56,7 @@ const InlineFilters: React.FC<InlineFiltersProps> = props => {
   }
 
   let fields = schema;
-  if (toggle && hiddenFilters && hiddenFilters.length > 0) fields = fields.filter(f => (f.toggleable !== undefined && !f.toggleable) || !hiddenFilters.includes(f.name));
+  if (toggle && hiddenFilters && hiddenFilters.length > 0) fields = fields.filter(f => (f.toggleable !== undefined && !f.toggleable) || !hiddenFilters.includes(Array.isArray(f.name) ? f.name.join("//=") : f.name));
 
 
   return (

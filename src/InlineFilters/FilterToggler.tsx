@@ -36,7 +36,7 @@ const FilterToggler: React.FC<FilterTogglerProps> = props => {
     partiallySelected,
     unSelectAll,
     selectAll,
-  } = useSelections(toggleableFilters.map(f => f.name), value || []);
+  } = useSelections(toggleableFilters.map(f => Array.isArray(f.name) ? f.name.join('//=') : f.name), value || []);
 
   const onSelect = (key: string) => {
     if(hiddenFilters.includes(key))
@@ -64,15 +64,18 @@ const FilterToggler: React.FC<FilterTogglerProps> = props => {
             {selectAllText}
           </Space>
         </div>
-        {toggleableFilters.map(f => (
-          <div key={f.name} className={`wand__inline-filter__option ${!hiddenFilters?.includes(f.name) ? 'wand__inline-filter__option--is-selected' : ''}`} onClick={(e) => onSelect(f.name)}>
-            <Space>
-              <Checkbox checked={!hiddenFilters?.includes(f.name)} />
-              {f.icon}
-              {f.title || f.label}
-            </Space>
-          </div>
-        ))}
+        {toggleableFilters.map(f => {
+          const fieldName = Array.isArray(f.name) ? f.name.join("//=") : f.name;
+          return (
+            <div key={fieldName} className={`wand__inline-filter__option ${!hiddenFilters?.includes(fieldName) ? 'wand__inline-filter__option--is-selected' : ''}`} onClick={(e) => onSelect(fieldName)}>
+              <Space>
+                <Checkbox checked={!hiddenFilters?.includes(fieldName)} />
+                {f.icon}
+                {f.title || f.label}
+              </Space>
+            </div>
+          )
+        })}
       </div>
       <div className="wand__inline-filter__footer">
         <Space size="small">
