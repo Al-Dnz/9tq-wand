@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.7.5](https://github.com/9troisquarts/9tq-wand/compare/v2.7.4...v2.7.5) (2023-07-17)
+
+
+### Bug Fixes
+
+* fix clipping of string input ([8b5a7bc](https://github.com/9troisquarts/9tq-wand/commit/8b5a7bcc8d034d5197a9a07970ad19af14bee6f9))
+
 ### [2.7.4](https://github.com/9troisquarts/9tq-wand/compare/v2.7.3...v2.7.4) (2023-07-17)
 
 
