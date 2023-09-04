@@ -2,8 +2,22 @@ import { useLocalStorageState, useDebounceFn } from 'ahooks';
 import queryString from "query-string";
 import qs from "qs";
 import { useEffect } from 'react';
+import moment from 'moment';
 import { ModelDefinitionType } from '@9troisquarts/wand'
 import castAttributesFromModel, { reverseCastFromDefinition } from '../ModelDefinition/castAttributesFromDefinition';
+
+const getPairs = (obj: any, keys = []) =>
+  Object.entries(obj).reduce((pairs, [key, value]) => {
+    if (value) {
+      if (typeof value === 'object')
+        // @ts-ignore
+        pairs.push(...getPairs(value, [...keys, key]));
+      else
+        // @ts-ignore
+        pairs.push([[...keys, key], value]);
+    }
+    return pairs;
+  }, []);
 
 type OptionsType = {
   enabled?: boolean;
@@ -85,9 +99,14 @@ function useSearchFilters<SearchType>(key: string, options: OptionsType) {
     setPage(perPage !== pageSize ? 1 : page);
     setPerPage(pageSize);
     if (updateLocation) {
+      const searchToStringify = Object.keys(search || {}).reduce((acc, attributeName) => {
+        if (moment.isMoment(search[attributeName])) acc[attributeName] = search[attributeName].format('YYYY-MM-DD');
+        else acc[attributeName] = search[attributeName];
+        return acc;
+      }, {})
       const pathname =
         window.location?.pathname + '?' + queryString.stringify(
-          { ...search, page, perPage: pageSize },
+          { ...searchToStringify, page, perPage: pageSize },
           { arrayFormat: 'bracket', skipNull: true },
         );
       if(history) history.replace(pathname);
@@ -102,19 +121,6 @@ function useSearchFilters<SearchType>(key: string, options: OptionsType) {
       wait: 500
     }
   )
-
-  const getPairs = (obj, keys = []) =>
-    Object.entries(obj).reduce((pairs, [key, value]) => {
-      if (value) {
-        if (typeof value === 'object')
-          // @ts-ignore
-          pairs.push(...getPairs(value, [...keys, key]));
-        else
-          // @ts-ignore
-          pairs.push([[...keys, key], value]);
-      }
-      return pairs;
-    }, []);
 
   return {
     // @ts-ignore

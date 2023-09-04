@@ -61,9 +61,15 @@ const castValue = (type, value) => {
     case 'String':
       return typeof value === 'string' ? value : value.toString();
     case 'Date':
-      return moment.isMoment(value) ? value.format('YYYY-MM-DD') : value;
+      const mDate = moment.isMoment(value) ? value : moment(value);
+      if (!mDate.isValid()) return null;
+
+      return mDate.format('YYYY-MM-DD');
     case 'Datetime':
-      return moment.isMoment(value) ? value.format() : value;
+      const mDateTime = moment.isMoment(value) ? value : moment(value);
+      if (!mDateTime.isValid()) return null;
+
+      return mDateTime.format();
     case 'Password':
     case 'Files':
     case 'File':
