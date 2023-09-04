@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.7.10](https://github.com/9troisquarts/9tq-wand/compare/v2.7.9...v2.7.10) (2023-09-04)
+
+
+### Bug Fixes
+
+* Remove hours from date ([fcb0ab4](https://github.com/9troisquarts/9tq-wand/commit/fcb0ab4463146b65105ea4d1a46388d6cb9e9675))
+
 ### [2.7.9](https://github.com/9troisquarts/9tq-wand/compare/v2.7.8...v2.7.9) (2023-09-04)
 
 ### [2.7.8](https://github.com/9troisquarts/9tq-wand/compare/v2.7.7...v2.7.8) (2023-09-04)
