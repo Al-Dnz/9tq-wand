@@ -53,26 +53,28 @@ export type AttributesType = {
 };
 
 const castValue = (type, value) => {
-  switch (type) {
-    case 'Float':
+  if(isNil(value)) return undefined;
+
+  switch (type.toLowerCase()) {
+    case 'float':
       return toFloat(value);
-    case 'Integer':
+    case 'integer':
       return parseInt(value, 10);
-    case 'String':
+    case 'string':
       return typeof value === 'string' ? value : value.toString();
-    case 'Date':
+    case 'date':
       const mDate = moment.isMoment(value) ? value : moment(value);
       if (!mDate.isValid()) return null;
 
       return mDate.format('YYYY-MM-DD');
-    case 'Datetime':
+    case 'datetime':
       const mDateTime = moment.isMoment(value) ? value : moment(value);
       if (!mDateTime.isValid()) return null;
 
       return mDateTime.format();
-    case 'Password':
-    case 'Files':
-    case 'File':
+    case 'password':
+    case 'files':
+    case 'file':
       if (value) return value;
       return;
     default:
@@ -81,8 +83,12 @@ const castValue = (type, value) => {
 };
 
 const reverseCastValue = (type, value) => {
-  switch (type) {
-    case 'Location':
+  switch (type.toLowerCase()) {
+    case 'files':
+      return value.filter(f => f instanceof File);
+    case 'file':
+      return value;
+    case 'location':
       return {
         location: {
           formattedAddress: value?.location?.formattedAddress || value?.formattedAddress,
@@ -97,18 +103,18 @@ const reverseCastValue = (type, value) => {
         },
         proximity: value.proximity ? parseInt(value.proximity, 10) : undefined,
       };
-    case 'Boolean':
+    case 'boolean':
       if(!value) return null
 
       return value === "true" || value === "1" || value
-    case 'Float':
+    case 'float':
       return toFloat(value);
-    case 'Integer':
+    case 'integer':
       return parseInt(value, 10);
-    case 'String':
+    case 'string':
       return typeof value === 'string' ? value : value.toString();
-    case 'Datetime':
-    case 'Date':
+    case 'datetime':
+    case 'date':
       return moment.isMoment(value) ? value : moment(value);
     default:
       return value;
@@ -176,34 +182,14 @@ function castAttributesFromModel(
       }
     } else if (!isNil(attributes[key])) {
       switch (value.toLowerCase()) {
-        case 'float':
-          formattedModel[key] = toFloat(attributes[key]);
+        case 'Files':
+          if (attributes[key]) formattedModel[key] = castValue('Files', attributes[key]);
           break;
-        case 'integer':
-          formattedModel[key] = parseInt(attributes[key], 10);
+        case 'File':
+          if (attributes[key] && attributes[key] instanceof File) formattedModel[key] = castValue('File', attributes[key]);
           break;
-        case 'string':
-          formattedModel[key] =
-            typeof attributes[key] === 'string' ? attributes[key] : attributes[key].toString();
-          break;
-        case 'date':
-          formattedModel[key] =
-            typeof attributes[key] !== 'string'
-              ? attributes[key].format('YYYY-MM-DD')
-              : attributes[key];
-          break;
-        case 'datetime':
-          formattedModel[key] =
-            typeof attributes[key] !== 'string' ? attributes[key].format() : attributes[key];
-          break;
-          case 'Files':
-            if (attributes[key]) formattedModel[key] = attributes[key].filter(f => f instanceof File);
-            break;
-          case 'File':
-            if (attributes[key] && attributes[key] instanceof File) formattedModel[key] = attributes[key];
-            break;
-          case 'password':
-          if (attributes[key]) formattedModel[key] = attributes[key];
+        case 'password':
+          if (attributes[key]) formattedModel[key] = castValue('String', attributes[key]);
           break;
         case 'nested':
           if (attributes[key])
@@ -212,7 +198,7 @@ function castAttributesFromModel(
               : omit(attributes[key], ['__typename']);
           break;
         default:
-          formattedModel[key] = attributes[key];
+          formattedModel[key] = castValue(value.toLowerCase(), attributes[key])
           break;
       }
     } else if (value !== 'password' && value !== 'nested' && value !== 'id') {
