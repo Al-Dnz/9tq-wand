@@ -13,18 +13,20 @@ group:
 ## Demo
 
 ```tsx
+import { useState } from 'react';
 import { Space } from 'antd';
 import { InlineFilters } from '@9troisquarts/wand';
 import { UserOutlined } from '@ant-design/icons';
 
 export default () => {
+  const [search, setSearch] = useState({ activeOn: '2023-11-12' })
 
-
+  const onReset = () => setSearch({ activeOn: '2023-11-12' })
   return (
     <Space direction="vertical" wrap>
       <InlineFilters
-        value={{ activeOn: '2023-11-12' }}
-        onReset={() => console.log("reset")}
+        value={search}
+        onReset={onReset}
         resetText="Réinitialiser les filtres"
         toggle={{
           key: 'projects',
@@ -32,7 +34,7 @@ export default () => {
           selectAllText: 'Tous les fitlres',
           // icon: <UserOutlined />
         }}
-        onChange={(object) => console.log(object)}
+        onChange={setSearch}
         schema={[
           {
             name: 'nameEq',
@@ -116,3 +118,11 @@ export default () => {
 
 
 ## API
+
+| Propriété | Type | Description |
+| --- | --- | --- |
+| `value` | `object` | ```required``` Current filter values |
+| `resetText` | `string` |  text displayed on the reset button. |
+| `toggle` | `ToggleProps` |  filter toggler configuration. |
+| `onChange` | `function` | function called when filter values change. |
+| `onReset` | `(values: object) => void` | function execute when the reset button is clicked. |

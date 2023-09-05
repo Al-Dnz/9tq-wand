@@ -26,9 +26,11 @@ const StringFilter: React.FC<FilterProps> = props => {
   const [isFocused, setIsFocused] = useState<boolean>(false);
   const [internalValue, setInternalValue] = useState<string | undefined>(value);
 
-  // useEffect(() => {
-  //   setInternalValue(value);
-  // }, [value]);
+  useEffect(() => {
+    if (!value) {
+      setInternalValue(undefined);
+    }
+  }, [value]);
 
   const handleChange = (e: any) => {
     setInternalValue(e.target.value);
