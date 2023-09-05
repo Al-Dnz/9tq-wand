@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.7.11](https://github.com/9troisquarts/9tq-wand/compare/v2.7.10...v2.7.11) (2023-09-05)
+
+
+### Bug Fixes
+
+* Les filtres de type string ne s'efface pas lors d'un reset ([0bccb81](https://github.com/9troisquarts/9tq-wand/commit/0bccb8117883f986a34f32e41b845ad785cefd7b))
+
 ### [2.7.10](https://github.com/9troisquarts/9tq-wand/compare/v2.7.9...v2.7.10) (2023-09-04)
 
 
