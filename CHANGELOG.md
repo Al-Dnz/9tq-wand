@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.7.13](https://github.com/9troisquarts/9tq-wand/compare/v2.7.12...v2.7.13) (2023-09-15)
+
+
+### Bug Fixes
+
+* Ajout default search a useTableList ([3decd0c](https://github.com/9troisquarts/9tq-wand/commit/3decd0c11f48a20ece54137921983c0b7b769e2f))
+
 ### [2.7.12](https://github.com/9troisquarts/9tq-wand/compare/v2.7.11...v2.7.12) (2023-09-05)
 
 ### [2.7.11](https://github.com/9troisquarts/9tq-wand/compare/v2.7.10...v2.7.11) (2023-09-05)
