@@ -15,6 +15,7 @@ type UseTableListProps = {
 
 type SearchOptions = {
   definition: ModelDefinitionType;
+  defaultSearch?: any;
   updateLocation?: boolean;
   key?: string;
   history: any;
@@ -35,6 +36,7 @@ function useTableList<RecordType = unknown, SearchType = unknown>(name: string, 
   } = useSearchFilters<SearchType>(searchOptions?.key || name, {
     debug,
     enabled: !!searchOptions,
+    defaultSearch: searchOptions?.defaultSearch || {},
     updateLocation: searchOptions?.updateLocation || false,
     history: searchOptions?.history,
     definition: searchOptions?.definition,
