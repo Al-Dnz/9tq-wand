@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.7.15](https://github.com/9troisquarts/9tq-wand/compare/v2.7.14...v2.7.15) (2023-09-19)
+
 ### [2.7.14](https://github.com/9troisquarts/9tq-wand/compare/v2.7.13...v2.7.14) (2023-09-19)
 
 
