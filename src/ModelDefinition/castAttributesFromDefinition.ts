@@ -182,10 +182,13 @@ function castAttributesFromModel(
       }
     } else if (!isNil(attributes[key])) {
       switch (value.toLowerCase()) {
-        case 'Files':
+        case 'attachment':
+          if (attributes[key].id) formattedModel[`${key}Id`] = attributes[key].id
+          break;
+        case 'files':
           if (attributes[key]) formattedModel[key] = castValue('Files', attributes[key]);
           break;
-        case 'File':
+        case 'file':
           if (attributes[key] && attributes[key] instanceof File) formattedModel[key] = castValue('File', attributes[key]);
           break;
         case 'password':
