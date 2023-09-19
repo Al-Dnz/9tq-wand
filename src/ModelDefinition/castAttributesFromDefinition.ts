@@ -204,7 +204,7 @@ function castAttributesFromModel(
           formattedModel[key] = castValue(value.toLowerCase(), attributes[key])
           break;
       }
-    } else if (value !== 'password' && value !== 'nested' && value !== 'id') {
+    } else if (value !== 'password' && value !== 'nested' && value !== 'id' && value !== "Attachment") {
       if (!options.skipUndefinedKeys || attributes.hasOwnProperty(key)) formattedModel[key] = null;
     }
   });
