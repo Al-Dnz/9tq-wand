@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.7.14](https://github.com/9troisquarts/9tq-wand/compare/v2.7.13...v2.7.14) (2023-09-19)
+
+
+### Bug Fixes
+
+* Add attachment type to cast from definition ([bfed529](https://github.com/9troisquarts/9tq-wand/commit/bfed529e117f46534cd6c71a8c42aa9670999c11))
+
 ### [2.7.13](https://github.com/9troisquarts/9tq-wand/compare/v2.7.12...v2.7.13) (2023-09-15)
 
 
