@@ -8,7 +8,6 @@ import useSearchFilters from "./useSearchFilters";
 type UseTableListProps = {
   query: DocumentNode;
   debug?: boolean;
-  params?: any;
   variables?: any;
   paginate?: boolean;
 }
@@ -17,6 +16,7 @@ type SearchOptions = {
   definition: ModelDefinitionType;
   defaultSearch?: any;
   updateLocation?: boolean;
+  params?: any;
   key?: string;
   history: any;
 };
@@ -26,8 +26,12 @@ function useTableList<RecordType = unknown, SearchType = unknown>(name: string, 
     query,
     debug = false,
     paginate = true,
-    params = {}
   } = options;
+
+  const {
+    params = {}
+  } = (searchOptions || {});
+
   const [extraParams, setExtraParams] = useState<any>(params || {});
   const {
     search,

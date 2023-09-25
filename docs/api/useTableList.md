@@ -20,11 +20,11 @@ Ce hook permet de gérer les tableaux de données.
   - `query`: Requête GraphQL à éxécuter pour récupérer la liste.
   - `debug` : un booléen qui indique si le mode de débogage est activé ou non. La valeur par défaut est false.
   - `paginate` : un booléen qui indique si la pagination est activée ou non. La valeur par défaut est true.
-  - `params` : un objet qui contient les paramètres à ajouter à la requête GraphQL.
   - `variables` : un objet qui contient les variables à passer à la requête GraphQL.
 - `searchOptions` : un objet qui contient les options de recherche. Il contient les champs suivants :
   - `key` : une chaîne de caractères qui indique la clé à utiliser pour stocker les paramètres de recherche dans le local-storage, `name` par défaut.
   - `definition` : un objet qui décrit le modèle de données de la recherche.
+  - `params` : un objet qui contient les attributs à ajouter à la variable search de la requête GraphQL.
   - `updateLocation` : un booléen qui indique si l'URL doit être mise à jour ou non. La valeur par défaut est false.
   - `history` *(required)*: Objet qui contient les fonctions push et replace (non compatibles directement avec react-router-dom >6) - obligatoire pour utiliser la fonction de recherche dans l'url
 
