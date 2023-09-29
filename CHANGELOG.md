@@ -2,6 +2,45 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.7.17](https://github.com/9troisquarts/9tq-wand/compare/v2.7.16...v2.7.17) (2023-09-29)
+
+
+### Bug Fixes
+
+* Correction de la date par défaut du filtre date ([c9b53eb](https://github.com/9troisquarts/9tq-wand/commit/c9b53eb0c12aee332d43fa9ebc741461d969bc54))
+
+### [2.7.27](https://github.com/9troisquarts/9tq-wand/compare/v2.7.26...v2.7.27) (2023-09-29)
+
+### [2.7.26](https://github.com/9troisquarts/9tq-wand/compare/v2.7.25...v2.7.26) (2023-09-29)
+
+### [2.7.25](https://github.com/9troisquarts/9tq-wand/compare/v2.7.24...v2.7.25) (2023-09-29)
+
+### [2.7.24](https://github.com/9troisquarts/9tq-wand/compare/v2.7.23...v2.7.24) (2023-09-29)
+
+### [2.7.23](https://github.com/9troisquarts/9tq-wand/compare/v2.7.22...v2.7.23) (2023-09-29)
+
+### [2.7.22](https://github.com/9troisquarts/9tq-wand/compare/v2.7.21...v2.7.22) (2023-09-29)
+
+### [2.7.21](https://github.com/9troisquarts/9tq-wand/compare/v2.7.16...v2.7.21) (2023-09-29)
+
+
+### Bug Fixes
+
+* Correction de la date par défaut du filtre date ([c9b53eb](https://github.com/9troisquarts/9tq-wand/commit/c9b53eb0c12aee332d43fa9ebc741461d969bc54))
+
+### [2.7.20](https://github.com/9troisquarts/9tq-wand/compare/v2.7.19...v2.7.20) (2023-09-29)
+
+### [2.7.19](https://github.com/9troisquarts/9tq-wand/compare/v2.7.18...v2.7.19) (2023-09-29)
+
+### [2.7.18](https://github.com/9troisquarts/9tq-wand/compare/v2.7.17...v2.7.18) (2023-09-29)
+
+### [2.7.17](https://github.com/9troisquarts/9tq-wand/compare/v2.7.16...v2.7.17) (2023-09-29)
+
+
+### Bug Fixes
+
+* Correction de la date par défaut du filtre date ([c9b53eb](https://github.com/9troisquarts/9tq-wand/commit/c9b53eb0c12aee332d43fa9ebc741461d969bc54))
+
 ### [2.7.16](https://github.com/9troisquarts/9tq-wand/compare/v2.7.14...v2.7.16) (2023-09-19)
 
 
