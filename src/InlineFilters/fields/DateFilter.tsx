@@ -1,9 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { DateInputProps, FieldSchema, SelectInputProps } from '../types';
-import SVG from 'react-inlinesvg';
+import React, { useEffect, useState } from 'react';
+import { DateInputProps, FieldSchema } from '../types';
 import { DatePicker } from 'antd';
 import '../index.css';
-import { filterOption } from '../_utils';
 import moment, { isMoment } from 'moment';
 
 type FilterProps = {
@@ -11,6 +9,14 @@ type FilterProps = {
   value: any;
   onChange: (values: any) => void;
 };
+
+const castDefaultValue = (value) => {
+  if (value) {
+    if (isMoment(value)) return value;
+    if (moment(value).isValid()) return moment(value);
+  }
+  return value
+}
 
 const DateFilter: React.FC<FilterProps> = props => {
   const {
@@ -23,10 +29,10 @@ const DateFilter: React.FC<FilterProps> = props => {
     inputProps = {}
   } = (field.input || {}) as DateInputProps;
 
-  const [internalValue, setInternalValue] = useState<moment.Moment | undefined>(isMoment(value) ? value : (moment(value).isValid() ? moment(value) : undefined));
+  const [internalValue, setInternalValue] = useState<moment.Moment | undefined>(castDefaultValue(value));
 
   useEffect(() => {
-    setInternalValue(isMoment(value) ? value : (moment(value).isValid() ? moment(value) : undefined));
+    setInternalValue(castDefaultValue(value));
   }, [value]);
 
   const handleChange = (value) => {
