@@ -28,7 +28,7 @@ type OptionsType = {
   history: any;
 }
 
-function useSearchFilters<SearchType>(key: string, options: OptionsType) {
+const useSearchFilters= <SearchType>(key: string, options: OptionsType) => {
   const {
     updateLocation = false,
     enabled = true,
@@ -100,7 +100,9 @@ function useSearchFilters<SearchType>(key: string, options: OptionsType) {
     setPerPage(pageSize);
     if (updateLocation) {
       const searchToStringify = Object.keys(search || {}).reduce((acc, attributeName) => {
+        // @ts-ignore
         if (moment.isMoment(search[attributeName])) acc[attributeName] = search[attributeName].format('YYYY-MM-DD');
+        // @ts-ignore
         else acc[attributeName] = search[attributeName];
         return acc;
       }, {})
@@ -115,6 +117,8 @@ function useSearchFilters<SearchType>(key: string, options: OptionsType) {
 
   const {
     run: onSearch,
+  }: {
+    run: (values: SearchType) => void;
   } = useDebounceFn(
     handleSearch,
     {
@@ -124,7 +128,7 @@ function useSearchFilters<SearchType>(key: string, options: OptionsType) {
 
   return {
     // @ts-ignore
-    search: definition ? reverseCastFromDefinition(definition, search) : search,
+    search: (definition ? reverseCastFromDefinition(definition, search) : search) as SearchType,
     page: page ? parseInt(page as string) : 1,
     perPage: perPage ? parseInt(perPage as string) : 10,
     onPageChange,

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useEffect, useRef, useState } from 'react';
 import { FieldSchema, SelectInputProps } from '../types';
 import SVG from 'react-inlinesvg';
@@ -13,7 +14,7 @@ type FilterProps = {
   onChange: (values: any) => void;
 };
 
-const sortByPresenceInArray = (array) => (a, b) => {
+const sortByPresenceInArray = (array: any[]) => (a: any, b: any) => {
   if (array.includes(a.value) && !array.includes(b.value))
     return 1;
   if (!array.includes(a.value) && array.includes(b.value))

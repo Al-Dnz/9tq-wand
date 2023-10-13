@@ -76,13 +76,18 @@ function useTableList<RecordType = unknown, SearchType = unknown>(name: string, 
     onChange: onPageChange
   }) : false
 
+  const handleSearchChange = (values: SearchType) => {
+    if(onSearchChange) onSearchChange(values);
+    setInternalPagination({ ...internalPagination, page: 1});
+  }
+
   return {
     records,
     data,
     loading,
     pagination: paginationProps,
     search,
-    onSearchChange,
+    onSearchChange: handleSearchChange,
     setExtraParams,
     refetch,
     onReset,

@@ -14,10 +14,9 @@ const renderDate = () => {
   )
 }
 
-export const renderValue = (props) => {
+export const renderValue = (props: { field: { label: string }}) => {
   const {
-    field,
-    value
+    field
   } = props;
   return (
     <Space>

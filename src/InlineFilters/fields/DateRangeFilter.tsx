@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useEffect, useState } from 'react';
 import { DateInputProps, FieldSchema } from '../types';
 import { DatePicker } from 'antd';

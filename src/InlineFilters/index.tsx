@@ -1,4 +1,5 @@
 import { useDebounceFn, useLocalStorageState } from 'ahooks';
+// @ts-ignore
 import { omit } from 'lodash';
 import { Button, Space } from 'antd';
 import React, { useEffect, useMemo, useState } from 'react';
@@ -37,7 +38,7 @@ const InlineFilters: React.FC<InlineFiltersProps> = props => {
     setInternalValue(value);
   }, [value]);
 
-  const submitValues = (values) => {
+  const submitValues = (values: any) => {
     setInternalValue(values)
     handleChange(values)
   }
@@ -47,7 +48,7 @@ const InlineFilters: React.FC<InlineFiltersProps> = props => {
     ...values
   }, toggle ? hiddenFilters : []));
 
-  const onFilterToggleChange = (names) => {
+  const onFilterToggleChange = (names: string[]) => {
     setHiddenFilters(names);
     submitValues(omit({
     ...internalValue
@@ -67,7 +68,7 @@ const InlineFilters: React.FC<InlineFiltersProps> = props => {
           <FilterComponent
             key={Array.isArray(field.name) ? field.name.join('--') : field.name}
             field={field}
-            value={Array.isArray(field.name) ? field.name.reduce((acc, name) => { acc[name] = internalValue[name]; return acc; }, {}) : internalValue[field.name]}
+            value={Array.isArray(field.name) ? field.name.reduce((acc: any, name: string) => { acc[name] = internalValue[name]; return acc; }, {}) : internalValue[field.name]}
             onChange={onFilterChange}
           />
         )

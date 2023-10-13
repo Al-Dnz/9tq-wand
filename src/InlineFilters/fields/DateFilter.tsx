@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useEffect, useState } from 'react';
 import { DateInputProps, FieldSchema } from '../types';
 import { DatePicker } from 'antd';
@@ -37,7 +38,7 @@ const DateFilter: React.FC<FilterProps> = props => {
 
   const handleChange = (value) => {
     setInternalValue(value);
-    onChange({ [field.name]: value })
+    onChange({ [field.name]: value });
   }
 
   return (

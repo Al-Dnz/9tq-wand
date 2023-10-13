@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { DocumentNode, gql, MutationFunctionOptions, QueryFunctionOptions, useMutation, useQuery } from "@apollo/client";
 import { ModelDefinitionType } from '@9troisquarts/wand'
 

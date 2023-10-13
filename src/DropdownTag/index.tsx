@@ -35,7 +35,7 @@ const DropdownTag: React.FC<DropdownTagProps> = props => {
   }));
 
   const selectedOption = value ? options.find(o => o.value === value) : null;
-  const onSelect = ({ key }) => onChange(key)
+  const onSelect = ({ key }: { key: any }) => onChange(key)
   return (
     <Dropdown menu={{ items, onClick: onSelect }}>
       <Tag className={className} style={style} {...rest}>

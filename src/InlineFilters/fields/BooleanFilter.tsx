@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useEffect, useState } from 'react';
 import { Space, Checkbox } from 'antd';
 import { BooleanInputProps, FieldSchema, StringInputProps } from '../types';

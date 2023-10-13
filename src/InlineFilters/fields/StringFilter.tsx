@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useEffect, useState } from 'react';
 import { FieldSchema, StringInputProps } from '../types';
 import { Input } from 'antd';

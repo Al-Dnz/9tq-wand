@@ -1,4 +1,5 @@
 import React from 'react';
+// @ts-ignore
 import trim from 'lodash/trim';
 
 const nl2br = (str = '', singleLine = false) => {

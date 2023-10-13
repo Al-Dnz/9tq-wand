@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useSelections } from 'ahooks';
 import { Button, Checkbox, Popover, Space } from 'antd';
 import React, { useEffect, useState } from 'react';
