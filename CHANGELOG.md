@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.7.31](https://github.com/9troisquarts/9tq-wand/compare/v2.7.30...v2.7.31) (2023-10-13)
+
+
+### Bug Fixes
+
+* **useTableList:** Reset de la pagination après une recherche ([c0be703](https://github.com/9troisquarts/9tq-wand/commit/c0be703e05a2ce8ed8da8f0b7131d929a4c738e9))
+
 ### [2.7.30](https://github.com/9troisquarts/9tq-wand/compare/v2.7.28...v2.7.30) (2023-09-29)
 
 ### [2.7.28](https://github.com/9troisquarts/9tq-wand/compare/v2.7.16...v2.7.28) (2023-09-29)
