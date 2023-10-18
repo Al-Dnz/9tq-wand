@@ -10,6 +10,7 @@ type UseTableListProps = {
   debug?: boolean;
   variables?: any;
   paginate?: boolean;
+  refreshPageOnSearch?: boolean;
 }
 
 type SearchOptions = {
@@ -26,6 +27,7 @@ function useTableList<RecordType = unknown, SearchType = unknown>(name: string, 
     query,
     debug = false,
     paginate = true,
+    refreshPageOnSearch = true,
   } = options;
 
   const {
@@ -46,14 +48,21 @@ function useTableList<RecordType = unknown, SearchType = unknown>(name: string, 
     definition: searchOptions?.definition,
   });
   const [internalPagination, setInternalPagination] = useState<{pageSize: number; page: number;}>({ pageSize: 25, page: 1 });
-  const { data, loading, refetch } = useQuery(query, { fetchPolicy: 'cache-and-network', variables: {
-    perPage: internalPagination.pageSize,
-    page: internalPagination.page,
-    ...(searchOptions ? ({
-      search: searchOptions.definition ? castAttributesFromModel(searchOptions.definition, { ...(search || {}), ...extraParams }) : ({ ...search, ...extraParams }),
-    }) : ({})),
-    ...(options.variables || {})
-  } });
+  const { data, loading, refetch } = useQuery(query,
+    {
+      fetchPolicy: 'cache-and-network',
+      variables: {
+        perPage: internalPagination.pageSize,
+        page: internalPagination.page,
+        ...(searchOptions ? ({
+          search: searchOptions.definition ? castAttributesFromModel(searchOptions.definition, { ...(search || {}), ...extraParams }) : ({ ...search, ...extraParams }),
+        }) : ({})),
+        ...(options.variables || {}),
+      },
+      onCompleted: () => {
+        if(refreshPageOnSearch) setInternalPagination({ ...internalPagination, page: 1});
+      }
+  });
   const queryRoot = data ? (data[name] || {}) : {};
   let records: Array<RecordType>;
 
@@ -78,7 +87,6 @@ function useTableList<RecordType = unknown, SearchType = unknown>(name: string, 
 
   const handleSearchChange = (values: SearchType) => {
     if(onSearchChange) onSearchChange(values);
-    setInternalPagination({ ...internalPagination, page: 1});
   }
 
   return {
