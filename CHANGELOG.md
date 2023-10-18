@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.7.32](https://github.com/9troisquarts/9tq-wand/compare/v2.7.31...v2.7.32) (2023-10-18)
+
+
+### Bug Fixes
+
+* Ajout d'une option pour refresh la pagination (default true) ([ba9453a](https://github.com/9troisquarts/9tq-wand/commit/ba9453a09ace7b396ef2198ef4212b41ecfd225f))
+
 ### [2.7.31](https://github.com/9troisquarts/9tq-wand/compare/v2.7.30...v2.7.31) (2023-10-13)
 
 
