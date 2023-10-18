@@ -10,7 +10,8 @@ type UseTableListProps = {
   debug?: boolean;
   variables?: any;
   paginate?: boolean;
-  refreshPageOnSearch?: boolean;
+  resetPaginationOnComplete?: boolean;
+  onCompleted?: (data: any) => void;
 }
 
 type SearchOptions = {
@@ -26,8 +27,9 @@ function useTableList<RecordType = unknown, SearchType = unknown>(name: string, 
   const {
     query,
     debug = false,
+    resetPaginationOnComplete = true,
     paginate = true,
-    refreshPageOnSearch = true,
+    onCompleted,
   } = options;
 
   const {
@@ -47,6 +49,7 @@ function useTableList<RecordType = unknown, SearchType = unknown>(name: string, 
     history: searchOptions?.history,
     definition: searchOptions?.definition,
   });
+  const [searchChanged, setSearchChanged] = useState<boolean>(false);
   const [internalPagination, setInternalPagination] = useState<{pageSize: number; page: number;}>({ pageSize: 25, page: 1 });
   const { data, loading, refetch } = useQuery(query,
     {
@@ -59,8 +62,10 @@ function useTableList<RecordType = unknown, SearchType = unknown>(name: string, 
         }) : ({})),
         ...(options.variables || {}),
       },
-      onCompleted: () => {
-        if(refreshPageOnSearch) setInternalPagination({ ...internalPagination, page: 1});
+      onCompleted: (data) => {
+        setSearchChanged(false);
+        if(resetPaginationOnComplete && searchChanged) setInternalPagination({ ...internalPagination, page: 1 });
+        if(onCompleted) onCompleted(data);
       }
   });
   const queryRoot = data ? (data[name] || {}) : {};
@@ -86,6 +91,7 @@ function useTableList<RecordType = unknown, SearchType = unknown>(name: string, 
   }) : false
 
   const handleSearchChange = (values: SearchType) => {
+    setSearchChanged(true);
     if(onSearchChange) onSearchChange(values);
   }
 
