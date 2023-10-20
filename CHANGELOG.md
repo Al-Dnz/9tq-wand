@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.8.2](https://github.com/9troisquarts/9tq-wand/compare/v2.8.1...v2.8.2) (2023-10-20)
+
+
+### Bug Fixes
+
+* default import should be empty when props is undefined ([2f7d14a](https://github.com/9troisquarts/9tq-wand/commit/2f7d14ab85b9406f68cff51dc59820409af48f59))
+
 ### [2.8.1](https://github.com/9troisquarts/9tq-wand/compare/v2.8.0...v2.8.1) (2023-10-18)
 
 ## [2.8.0](https://github.com/9troisquarts/9tq-wand/compare/v2.7.32...v2.8.0) (2023-10-18)
