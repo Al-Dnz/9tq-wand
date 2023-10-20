@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.8.4](https://github.com/9troisquarts/9tq-wand/compare/v2.8.3...v2.8.4) (2023-10-20)
+
+
+### Bug Fixes
+
+* add some debug ([f614cb1](https://github.com/9troisquarts/9tq-wand/commit/f614cb175e248639e2361739a3bc7e26332bcc64))
+
 ### [2.8.3](https://github.com/9troisquarts/9tq-wand/compare/v2.8.2...v2.8.3) (2023-10-20)
 
 
