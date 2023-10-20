@@ -68,10 +68,15 @@ export const ImportModalContent: React.FC<ImportModalProps> = (props) => {
   const { importer, importFile, onReset, onImport, onProcessImport } = useImportModal({
     configuration: config,
     importType,
-    defaultImporter: props.importer || {},
+    defaultImporter: props.importer,
     defaultImportFile: props.importFile,
     onCompleted,
   });
+
+  if (debug) {
+    console.log("importer", importer);
+    console.log("importFile", importFile);
+  }
 
   const translate = props.translate || config.translate;
 

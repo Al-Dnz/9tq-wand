@@ -6,7 +6,7 @@ import { ConfigurationType, ImporterType } from './types';
 const useImportModal = ({
   configuration,
   importType,
-  defaultValue = {},
+  defaultValue = undefined,
   defaultImportFile = undefined,
 }: {
   configuration: ConfigurationType;
