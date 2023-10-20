@@ -7,7 +7,7 @@ const useImportModal = ({
   configuration,
   importType,
   defaultValue = {},
-  defaultImportFile = {},
+  defaultImportFile = undefined,
 }: {
   configuration: ConfigurationType;
   importType: string;
