@@ -69,7 +69,7 @@ export const ImportModalContent: React.FC<ImportModalProps> = (props) => {
     configuration: config,
     importType,
     defaultImporter: props.importer || {},
-    defaultImportFile: props.importFile || {},
+    defaultImportFile: props.importFile,
     onCompleted,
   });
 
