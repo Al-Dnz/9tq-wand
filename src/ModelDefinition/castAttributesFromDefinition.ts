@@ -64,13 +64,13 @@ const castValue = (type, value) => {
     case 'string':
       return typeof value === 'string' ? value : value.toString();
     case 'date':
-      const mDate = value;
+      let mDate = value;
       if (!dayjs.isDayjs(mDate) && !moment.isMoment(mDate)) mDate = dayjs(mDate);
       if (!mDate.isValid()) return null;
 
       return mDate.format('YYYY-MM-DD');
     case 'datetime':
-      const mDateTime = value;
+      let mDateTime = value;
       if (!dayjs.isDayjs(mDateTime) && !moment.isMoment(mDateTime)) mDate = dayjs(mDateTime);
       if (!mDateTime.isValid()) return null;
 
