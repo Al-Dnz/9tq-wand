@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/9troisquarts/9tq-wand/compare/v2.8.4...v3.0.0) (2023-11-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* DayJS
+
+### Features
+
+* DayJS ([6dff822](https://github.com/9troisquarts/9tq-wand/commit/6dff8223b83358aa32f681b5c454c28e357f6f38))
+
 ### [2.8.4](https://github.com/9troisquarts/9tq-wand/compare/v2.8.3...v2.8.4) (2023-10-20)
 
 
