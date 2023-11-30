@@ -1,9 +1,12 @@
 // @ts-nocheck
 import React, { useEffect, useState } from 'react';
 import { DateInputProps, FieldSchema } from '../types';
-import { DatePicker } from 'antd';
 import '../index.css';
-import moment, { isMoment } from 'moment';
+import dayjs from 'dayjs';
+import dayjsGenerateConfig from 'rc-picker/lib/generate/dayjs';
+import generatePicker from 'antd/lib/date-picker/generatePicker';
+
+const DatePicker = generatePicker<DayjsType>(dayjsGenerateConfig)
 
 const { RangePicker } = DatePicker;
 
@@ -14,7 +17,7 @@ type FilterProps = {
 };
 
 type ValueType = {
-  [k: string]: string | moment.Moment
+  [k: string]: string | dayjs.Dayjs;
 };
 
 const DateRangeFilter: React.FC<FilterProps> = props => {
@@ -36,7 +39,7 @@ const DateRangeFilter: React.FC<FilterProps> = props => {
     setInternalValue(value || {})
   }, [value])
 
-  const handleChange = (mDates: [moment.Moment, moment.Moment]) => {
+  const handleChange = (mDates: [dayjs.Dayjs, dayjs.Dayjs]) => {
     const nextValues = {
       [startName]: mDates ? mDates[0] : undefined,
       [endName]: mDates ? mDates[1] : undefined,
@@ -47,10 +50,10 @@ const DateRangeFilter: React.FC<FilterProps> = props => {
 
 
   let from = internalValue[startName];
-  if(from && !moment.isMoment(from)) from = moment(from).startOf('day');
+  if(from && !dayjs.isDayjs(from)) from = dayjs(from).startOf('day');
 
   let to = internalValue[endName];
-  if(to && !moment.isMoment(to)) to = moment(to).startOf('day');
+  if(to && !dayjs.isDayjs(to)) to = dayjs(to).startOf('day');
 
   const v = [
     from,

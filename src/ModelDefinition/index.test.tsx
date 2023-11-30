@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
-import moment from 'moment';
 import ModelDefinition from './index';
+import dayjs from 'dayjs';
 
 describe('ModelDefinition', () => {
   it('cast string to float', () => {
@@ -12,12 +12,12 @@ describe('ModelDefinition', () => {
   });
 
   it('cast date to string', () => {
-    const date = moment();
+    const date = dayjs();
     const definition = new ModelDefinition({
       date: 'date',
       datetime: 'datetime',
     });
     const parsedAttributes = definition.parse({ date, datetime: date });
-    expect(parsedAttributes.date).toEqual(moment().format('YYYY-MM-DD'));
+    expect(parsedAttributes.date).toEqual(dayjs().format('YYYY-MM-DD'));
   });
 });

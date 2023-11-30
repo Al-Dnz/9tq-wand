@@ -5,6 +5,7 @@ import omit from 'lodash/omit';
 import isArray from 'lodash/isArray';
 import isNil from 'lodash/isNil';
 import moment from 'moment';
+import dayjs from 'dayjs';
 
 const toFloat = (v: number) => parseFloat(v.toString().replace(/\,/g, '.'));
 
@@ -63,12 +64,14 @@ const castValue = (type, value) => {
     case 'string':
       return typeof value === 'string' ? value : value.toString();
     case 'date':
-      const mDate = moment.isMoment(value) ? value : moment(value);
+      const mDate = value;
+      if (!dayjs.isDayjs(mDate) && !moment.isMoment(mDate)) mDate = dayjs(mDate);
       if (!mDate.isValid()) return null;
 
       return mDate.format('YYYY-MM-DD');
     case 'datetime':
-      const mDateTime = moment.isMoment(value) ? value : moment(value);
+      const mDateTime = value;
+      if (!dayjs.isDayjs(mDateTime) && !moment.isMoment(mDateTime)) mDate = dayjs(mDateTime);
       if (!mDateTime.isValid()) return null;
 
       return mDateTime.format();
@@ -115,7 +118,8 @@ const reverseCastValue = (type, value) => {
       return typeof value === 'string' ? value : value.toString();
     case 'datetime':
     case 'date':
-      return moment.isMoment(value) ? value : moment(value);
+      if (dayjs.isDayjs(value)) return value;
+      return moment.isMoment(value) ? value : dayjs(value);
     default:
       return value;
   }

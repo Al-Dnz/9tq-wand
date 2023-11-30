@@ -197,6 +197,10 @@ function useGraphqlModel<RecordType = unknown>(modelName: string, opts: GraphqlM
 
     const [errors, setErrors] = useState<any | undefined>(undefined);
 
+    useEffect(() => {
+      setErrors(undefined);
+    }, [id]);
+
     // @ts-ignore
     const [create, { loading: creating }] = createMutation ? useMutation(createMutation, {
       ...(mutationOptions || {}),

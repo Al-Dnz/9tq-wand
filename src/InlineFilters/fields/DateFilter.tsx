@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { DateInputProps, FieldSchema } from '../types';
 import { DatePicker } from 'antd';
 import '../index.css';
-import moment, { isMoment } from 'moment';
+import dayjs, { isDayjs } from 'dayjs';
 
 type FilterProps = {
   field: FieldSchema;
@@ -11,10 +11,10 @@ type FilterProps = {
   onChange: (values: any) => void;
 };
 
-const castDefaultValue = (value) => {
+const castDefaultValue = (value: string | dayjs.Dayjs) => {
   if (value) {
-    if (isMoment(value)) return value;
-    if (moment(value).isValid()) return moment(value);
+    if (isDayjs(value)) return value;
+    if (dayjs(value).isValid()) return dayjs(value);
   }
   return value
 }
@@ -30,7 +30,7 @@ const DateFilter: React.FC<FilterProps> = props => {
     inputProps = {}
   } = (field.input || {}) as DateInputProps;
 
-  const [internalValue, setInternalValue] = useState<moment.Moment | undefined>(castDefaultValue(value));
+  const [internalValue, setInternalValue] = useState<dayjs.Dayjs | undefined>(castDefaultValue(value));
 
   useEffect(() => {
     setInternalValue(castDefaultValue(value));

@@ -16,7 +16,7 @@ Permet de caster un objet JS vers un format qui peut être compris par le backen
 
 ```tsx | pure
 import { ModelDefinition } from '@9troisquarts/wand';
-import moment from 'moment';
+import dayjs from 'dayjs';
 
 const UserDefinition = new ModelDefinition({
   username: 'String',
@@ -31,7 +31,7 @@ const user = {
   username: '9tq',
   fake: 'fake',
   birthdate: '2021-11-11',
-  date: moment(),
+  date: dayjs(),
 };
 
 const params = UserDefinition.parse(user);

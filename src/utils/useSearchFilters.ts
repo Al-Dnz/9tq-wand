@@ -2,6 +2,7 @@ import { useLocalStorageState, useDebounceFn } from 'ahooks';
 import queryString from "query-string";
 import qs from "qs";
 import { useEffect } from 'react';
+import dayjs from 'dayjs';
 import moment from 'moment';
 import { ModelDefinitionType } from '@9troisquarts/wand'
 import castAttributesFromModel, { reverseCastFromDefinition } from '../ModelDefinition/castAttributesFromDefinition';
@@ -100,6 +101,8 @@ const useSearchFilters= <SearchType>(key: string, options: OptionsType) => {
     setPerPage(pageSize);
     if (updateLocation) {
       const searchToStringify = Object.keys(search || {}).reduce((acc, attributeName) => {
+        // @ts-ignore
+        if (dayjs.isDayjs(search[attributeName])) acc[attributeName] = search[attributeName].format('YYYY-MM-DD');
         // @ts-ignore
         if (moment.isMoment(search[attributeName])) acc[attributeName] = search[attributeName].format('YYYY-MM-DD');
         // @ts-ignore

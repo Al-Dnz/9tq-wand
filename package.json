@@ -61,6 +61,7 @@
     "ahooks": "<4",
     "antd": "<5",
     "axios": "<2",
+    "dayjs": "^1.11.10",
     "graphql": "<17",
     "humps": "^2.0",
     "lodash": "^4.17",

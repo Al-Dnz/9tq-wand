@@ -1,3 +1,9 @@
+import dayjs from 'dayjs';
+import localizedFormat from 'dayjs/plugin/localizedFormat';
+dayjs.extend(localizedFormat);
+
+dayjs().format('L LT');
+
 export { default as ModelDefinition } from './ModelDefinition';
 export { default as castAttributesFromDefinition } from './ModelDefinition/castAttributesFromDefinition';
 export type { ModelDefinitionType } from './ModelDefinition/castAttributesFromDefinition';
