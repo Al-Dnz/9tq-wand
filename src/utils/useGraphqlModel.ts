@@ -2,7 +2,7 @@
 import { DocumentNode, gql, MutationFunctionOptions, QueryFunctionOptions, useMutation, useQuery } from "@apollo/client";
 import { ModelDefinitionType } from '@9troisquarts/wand'
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { upperFirst } from 'lodash';
 import { notification } from 'antd';
 import castAttributesFromModel from "../ModelDefinition/castAttributesFromDefinition";
