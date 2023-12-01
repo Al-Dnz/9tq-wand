@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.3](https://github.com/9troisquarts/9tq-wand/compare/v3.0.2...v3.0.3) (2023-12-01)
+
+
+### Bug Fixes
+
+* usegraphql model error ([01cd582](https://github.com/9troisquarts/9tq-wand/commit/01cd582606ae1b7f1c84b1e701111ccb3d8b6232))
+
 ### [3.0.2](https://github.com/9troisquarts/9tq-wand/compare/v3.0.1...v3.0.2) (2023-11-30)
 
 ### [3.0.1](https://github.com/9troisquarts/9tq-wand/compare/v3.0.0...v3.0.1) (2023-11-30)
