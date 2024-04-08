@@ -89,15 +89,15 @@
     "prettier": "^2.7.1",
     "prettier-plugin-organize-imports": "^3.0.0",
     "prettier-plugin-packagejson": "^2.2.18",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "<19",
+    "react-dom": "<19",
     "standard-version": "^9.5.0",
     "stylelint": "^14.9.1"
   },
   "peerDependencies": {
-    "react": ">=18.0.0",
+    "react": "<19",
     "rc-picker": "~2.7.0",
-    "react-dom": ">=18.0.0"
+    "react-dom": "<19"
   },
   "publishConfig": {
     "access": "public"

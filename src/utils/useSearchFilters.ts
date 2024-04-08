@@ -4,7 +4,7 @@ import qs from "qs";
 import { useEffect } from 'react';
 import dayjs from 'dayjs';
 import moment from 'moment';
-import { ModelDefinitionType } from '@9troisquarts/wand'
+import { ModelDefinition, ModelDefinitionType } from '@9troisquarts/wand'
 import castAttributesFromModel, { reverseCastFromDefinition } from '../ModelDefinition/castAttributesFromDefinition';
 
 const getPairs = (obj: any, keys = []) =>
@@ -75,10 +75,8 @@ const useSearchFilters= <SearchType>(key: string, options: OptionsType) => {
     let nextSearch = { ...s, ...values };
     let locationSearch = { ...s, ...values };
     if (definition) {
-      // @ts-ignore
-      nextSearch = castAttributesFromModel(definition, nextSearch);
-      // @ts-ignore
-      locationSearch = castAttributesFromModel(definition, locationSearch, { skipDate: true });
+      const searchModel = new ModelDefinition(definition);
+      nextSearch = searchModel.parse(nextSearch);
     }
     if(debug) console.table({ parameters: nextSearch, original: values, definition })
     setSearch(nextSearch)
